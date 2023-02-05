@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+</style>
 
 html,
 body {
@@ -96,6 +98,11 @@ h6 {
 p {
 	margin-top: 0;
 	margin-bottom: 1rem
+}
+
+p:not([class]) {
+	text-align:justify;
+	hyphens: auto
 }
 
 abbr[data-original-title],
@@ -381,8 +388,15 @@ h4,
 h5,
 h6 {
 	margin-bottom: .5rem;
-	font-weight: 500;
-	line-height: 1.2
+	/* font-weight: 200; */
+	line-height: 1.2;
+	font-family: "Oswald" sans-serif;
+	font-weight: 300;
+	text-transform:uppercase
+}
+
+h3,h4:first-child {
+	font-weight: 600;
 }
 
 .h1,
@@ -11582,7 +11596,6 @@ a.text-dark:hover {
 
 .cv svg {
 	margin-top: -6px;
-	width: 23px;
 	margin-right: 5px;
 	color: #e48954;
 }
@@ -11615,6 +11628,10 @@ a.text-dark:hover {
 
 .cv .card-body {
 	padding-bottom: 10px;
+}
+
+.card-body span:last-child {
+	color: rgb(123, 123, 123) !important;
 }
 
 .cert img {
