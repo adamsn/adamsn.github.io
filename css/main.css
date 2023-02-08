@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-</style>
 
 html,
 body {
@@ -101,7 +100,7 @@ p {
 }
 
 p:not([class]) {
-	text-align:justify;
+	text-align: justify;
 	hyphens: auto
 }
 
@@ -127,6 +126,32 @@ ol,
 ul {
 	margin-top: 0;
 	margin-bottom: 1rem
+}
+
+.card-body ul {
+	margin-left: 1rem;
+	margin-right: -1rem;
+	margin-bottom: 0;
+}
+
+.card-body li {
+	margin-right: 1rem;
+	margin-bottom: .5rem;
+}
+
+@media (min-width:1000px) {
+	.card-body li {
+		text-align: justify;
+		hyphens: auto
+	}
+}
+
+@media (min-width: 768px) {
+	.card-body ul {
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+	}
 }
 
 ol ol,
@@ -392,11 +417,13 @@ h6 {
 	line-height: 1.2;
 	font-family: "Oswald" sans-serif;
 	font-weight: 300;
-	text-transform:uppercase
+	text-transform: uppercase
 }
 
-h3,h4:first-child {
-	font-weight: 600;
+h4:first-child {
+	text-align: center;
+	font-weight: 400;
+	color: #777;
 }
 
 .h1,
@@ -410,10 +437,7 @@ h2 {
 }
 
 .h3,
-h3 {
-	font-size: 1.75rem
-}
-
+h3,
 .h4,
 h4 {
 	font-size: 1.5rem
@@ -11558,7 +11582,7 @@ a.text-dark:hover {
 	cursor: default;
 	position: fixed;
 	width: 40%;
-	width: 245px;
+	width: 259px;
 }
 
 .cv .progress {
@@ -11652,6 +11676,9 @@ a.text-dark:hover {
 		max-width: 100%;
 	}
 }
+.badge-primary + .badge-primary {
+	margin-top: 4px;
+}
 
 @media screen and (max-width: 767px) {
 	.skillz .col-md-6 {
@@ -11667,14 +11694,29 @@ a.text-dark:hover {
 	}
 
 	.cv .contact {
+		display: flex;
 		position: static;
 		width: 100%;
 		max-width: 100%;
 		margin-bottom: 30px;
+		flex-wrap:wrap
 	}
 
-	.cv .profile {
-		width: 70%;
+	.cv .contact .vr {
+		box-sizing: content-box;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		border-left: 1px solid rgba(0, 0, 0, .1);
+		max-width: 1px;
+	}
+
+	.contact :nth-child(1) {
+		flex: 1 0 33%
+	}
+
+	.contact :nth-child(4) {
+		flex: 1 0 33%;
+		min-width: 178px
 	}
 }
 
