@@ -104,6 +104,10 @@ p:not([class]) {
 	hyphens: auto
 }
 
+.info .col-md-6 p {
+	text-align:left;
+}
+
 abbr[data-original-title],
 abbr[title] {
 	text-decoration: underline;
@@ -752,7 +756,7 @@ pre code {
 	position: relative;
 	width: 100%;
 	padding-right: 15px;
-	padding-left: 15px
+	padding-left: 15px;
 }
 
 .col {
@@ -2297,6 +2301,23 @@ pre code {
 	.table-responsive-md>.table-bordered {
 		border: 0
 	}
+
+	.info .reorder:nth-of-type(1) {
+		order: 1;
+	}
+
+	.info .reorder:nth-of-type(2) {
+		order: 3;
+	}
+
+	.info .reorder:nth-of-type(3) {
+		order: 2;
+	}
+
+	.info .reorder:nth-of-type(4) {
+		order: 4;
+	}
+
 }
 
 @media (max-width:991.98px) {
@@ -11676,7 +11697,8 @@ a.text-dark:hover {
 		max-width: 100%;
 	}
 }
-.badge-primary + .badge-primary {
+
+.badge-primary+.badge-primary {
 	margin-top: 4px;
 }
 
@@ -11699,7 +11721,7 @@ a.text-dark:hover {
 		width: 100%;
 		max-width: 100%;
 		margin-bottom: 30px;
-		flex-wrap:wrap
+		flex-wrap: wrap
 	}
 
 	.cv .contact .vr {
