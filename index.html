@@ -1,258 +1,501 @@
 <!doctype html>
-<html lang="fr">
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	<title>Adam Siran, Développeur</title>
+	<link rel="shortcut icon" type="image/jpg" href="favicon.png" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		/* Utils */
+/*----- Colors -----*/
+/*----- Fonts -----*/
+/*----- Dimensions and sizes -----*/
+/* Base */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04zwV_pQ1T3xN3K1c3sB361us.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04z306qf9KHRHwsVx7iw5MXmY.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v11/2HG_tEPiQ4Z6795cGfdivKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/LqowQDslGv4DmUBAfWa2Vw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}
 
-<head>
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background: #f8f8f8;
+  margin: 50px 0 100px;
+  letter-spacing: .3px;
+  color: #39424B; }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Mon CV en ligne">
-  <meta name="author" content="Adam Siran">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="shortcut icon" type="image/jpg" href="favicon.png" />
-  <!-- Our project just needs Font Awesome Solid + Brands -->
-  <script defer src="/assets/fontawesome/js/brands.js"></script>
-  <script defer src="/assets/fontawesome/js/solid.js"></script>
-  <script defer src="/assets/fontawesome/js/fontawesome.js"></script>
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  margin: 0; }
 
-  <title>Curriculum Vitae</title>
-</head>
+h1 {
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0px; }
 
-<body>
+h2 {
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 1px; }
 
-  <div class="cv">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="box contact">
-            <div class="sub-box">
-              <img class="profile" src="profile.jpg" alt="profile pic" />
-              <h3>Adam Siran</h3>
-              <div class="badges">
-                <span class="badge badge-primary">Développeur</span>
-                <span class="badge badge-primary">Technicien</span>
-                <span class="badge badge-primary">IT</span>
-              </div>
-            </div>
-            <hr><span class="vr"></span>
-            <div class="sub-box">
-              <p class="ii">
-                <i class="fa-solid fa-calendar-days fa-lg fa-fw" data-fa-transform="grow-1"></i> 18 octobre, 1987
-              </p>
-              <p class="ii">
-                <i class="fa-solid fa-map-location-dot fa-lg fa-fw" data-fa-transform="shrink-1"></i>
-                Maen Roch (35)
-              </p>
-              <a href="tel:+33601912148">
-                <p class="ii"><i class="fa-brands fa-whatsapp fa-lg fa-fw" data-fa-transform="grow-3"></i>
-                  +33 6 01 91 21 48</p>
-              </a>
-              <a href="mailto:teck76@gmail.com">
-                <p class="ii"><i class="fa-solid fa-envelope fa-lg fa-fw"></i> teck76@gmail.com</p>
-              </a>
-              <a href="https://www.linkedin.com/in/adam-siran-8104a963">
-                <p class="ii"><i class="fa-brands fa-linkedin fa-lg fa-fw" data-fa-transform="grow-2"></i> go.ly/MiMpa
-                </p>
-              </a>
-              <hr>
-              <a onclick="window.print();return false;" href="#"><button class="btn btn-primary">Imprimer le
-                  CV</button></a>
-            </div>
-          </div>
-        </div>
+h3 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: .4px; }
+  h3.bold {
+    font-weight: 700; }
 
-        <div class="col-md-9">
-          <div class="box info">
-            <h4> Développeur
-              Java Junior
-            </h4>
-            <hr>
-            <p>Stagiaire suivant une POEC développeur Java, à la recherche d'une entreprise
-              pour effectuer mon alternance de Concepteur Développeur d'Applications et renforcer mes compétences
-              pratiques.</p>
-            <br />
-            <h4><i class="fa-solid fa-book-open-reader fa-lg fa-fw"></i> Formation</h4>
-            <hr>
-            <div class="card">
-              <div class="card-header">
-                <p class="smm"><b style="float: left;">Développeur Java</b> <span style="float: right"> Décembre
-                    2022 - Mars 2023 </span></p>
-              </div>
-              <div class="card-body">
-                <span style="float: left">Preparation Opérationnelle à l'Emploi Collective</span><span
-                  style="float: right"> ENI Ecole Informatique, Rennes
-                </span>
-              </div>
-            </div>
-            <br />
-            <div class="card">
-              <div class="card-header">
-                <p class="smm"><b style="float: left;">Informatique de Gestion, option Administrateur de Réseaux Locaux
-                    d’Entreprises</b> <span style="float: right">2010 - 2011</span></p>
-              </div>
-              <div class="card-body">
-                <span style="float: left">Brevet de Technicien Supérieur</span><span style="float: right"> GRETA de
-                  Bretagne
-                  Occidentale, Morlaix
-                </span>
-              </div>
-            </div>
-            <br />
-            <div class="card">
-              <div class="card-header">
-                <p class="smm"><b style="float: left;">Micro-Informatique et Réseau,
-                    Installation et Maintenance </b> <span style="float: right"> 2007 - 2008 </span></p>
-              </div>
-              <div class="card-body">
-                <span style="float: left">Baccalauréat Professionnel</span><span style="float: right"> L.P. Coëtlogon,
-                  Rennes
-                </span>
-              </div>
-            </div>
-            <br /> <br />
-            <h4><i class="fa-solid fa-briefcase fa-lg fa-fw"></i>Expériences Principales</h4>
-            <hr>
-            <div class="card">
-              <div class="card-header">
-                <p class="smm"><b style="float: left;">Administrateur Systèmes et Réseaux</b> <span
-                    style="float: right">Janvier 2020 - Mars 2021</span></p>
-              </div>
-              <div class="card-body">
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Intégrer, préparer et
-                    mettre
-                    en service les
-                    solutions d’accès Internet public vendues
-                    aux établissements clients,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Surveiller à distance
-                    l’équipement réseau et
-                    réaliser le support niveau 2,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Élaborer un plan
-                    d'implantation réseau
-                    selon les besoins de l’établissement,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Participer aux projets
-                    de mise
-                    en oeuvre
-                    de nouvelles solutions et les évaluer,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Administrer les
-                    serveurs.</li>
-                </ul>
-              </div>
-            </div>
-            <br />
-            <div class="card">
-              <div class="card-header">
-                <p class="smm"><b style="float: left;">Technicien Réseaux et Télécoms</b> <span
-                    style="float: right">Juillet 2018 – Septembre 2019</span></p>
-              </div>
-              <div class="card-body">
+h4 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px; }
+  h4.bold {
+    font-weight: 700; }
 
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Piloter les étapes de
-                    création, modification et résiliation de l’équipement réseau (data et voix) et
-                    réaliser sa configuration, selon la commande commerciale du client final.</li>
-                </ul>
-              </div>
-            </div>
-            <br />
-            <div class="card">
-              <div class="card-header">
-                <p class="smm"><b style="float: left;">Technicien Assistance Utilisateurs</b> <span
-                    style="float: right">Août 2015 – Août 2016</span></p>
-              </div>
-              <div class="card-body">
-                <b>Helpdesk</b>
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Assurer l'accueil
-                    téléphonique personnalisé,
-                    enregistrer l'appel et le qualifier,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span> Réaliser le conseil et
-                    support à l’utilisateur,
-                    sur site ou avec prise en main à distance,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Assurer le déploiement
-                    de matériel et logiciels demandés par l’utilisateur,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Gérer le suivi des
-                    incidents et des demandes
-                    jusqu'à leur clôture,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span>Participer à
-                    l'entretien de la base
-                    documentaire et à la gestion de parc.</li>
-                </ul>
-                <b>Patch Management</b>
-                <ul class="fa-ul">
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span> Analyser et mettre en
-                    test les mises à jour
-                    de sécurités validées par l’expert sécurité,</li>
-                  <li><span class="fa-li"><i class="fa-solid fa-chevron-right fa-2xs"></i></span> Administrer le
-                    déploiement des mises à jour
-                    de sécurité et applicatives sur le parc.</li>
-                </ul>
-              </div>
-            </div>
-            <br /> <br />
-            <h4><i class="fa-solid fa-bars-progress fa-lg fa-fw"></i>Compétences</h4>
-            <hr>
+h5 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 11px; }
+  h5.italic {
+    font-style: italic; }
 
-            <div class="row">
-              <div class="col-md-6">
-                <h6>Technologies</h6>
-                <b>Codage</b>
-                <p>Java, SQL, HTML/CSS, Bootstrap, Shell Unix, YAML</p>
-                <b>Client - Serveur</b>
-                <p>Windows, Linux, Android, Docker, Active Directory</p>
-              </div>
-              <div class="col-md-6">
-                <h6>Domaines</h6>
-                <b>Automatisation</b>
-                <p>Programmation back-end, scripting, web scraping</p>
-                <b>Systèmes et Réseaux</b>
-                <p>Administration, déploiement, maintenance</p>
-              </div>
-            </div><br />
+h6 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px; }
 
-            <div class="row">
-              <div class="col-md-6 reorder">
-                <h4><i class="fa-solid fa-award fa-lg fa-fw"></i>Certifications</h4>
-                <hr>
-              </div>
-              <div class="col-md-6 reorder">
-                <h4><i class="fa-solid fa-award fa-lg fa-fw"></i>Langues</h4>
-                <hr>
-              </div>
-              <div class="col-md-6 reorder">
-                <h6>CISCO CCNA1, CCNA2, CCNA3</h6>
-                <h6>IELTS 8/9 (équivalent TOEIC 785 – 990)</h6>
-              </div>
-              <div class="col-md-6 reorder">
-                <h6>Français</h6>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="20" aria-valuemin="0"
-                    aria-valuemax="100">Bilingue</div>
-                </div>
-                <h6>Anglais</h6>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0"
-                    aria-valuemax="100">Bilingue</div>
-                </div>
-                <h6>Hébreu</h6>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="20" aria-valuemin="0"
-                    aria-valuemax="100">Langue natale</div>
-                </div>
-              </div>
-            </div>
+a {
+  color: inherit;
+  text-decoration: inherit; }
+  a:hover {
+    color: #2895F1; }
+  a .fa-external-link {
+    font-size: 10px;
+    vertical-align: text-top; }
 
-          </div>
-        </div>
-      </div>
-    </div>
+p,
+li {
+  font-size: 11px; }
 
+blockquote {
+  font-size: 11px;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 10px 25px; }
 
+em {
+  color: #999; }
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-    <script src="fontawesome/js/main.js"></script>
-  </div>
-</body>
+ul {
+  margin: 10px 0 0;
+  -webkit-padding-start: 25px; }
+  ul li {
+    padding-left: 10px; }
+  ul.minimal {
+    list-style: none;
+    padding: 0; }
+    ul.minimal li {
+      margin-bottom: 3px;
+      padding-left: 0; }
+  ul.two-column {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 28px;
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 28px;
+         column-gap: 28px; }
+    ul.two-column li {
+      padding-left: 0; }
 
+@page {
+  size: A4; }
+
+.container {
+  padding-top: 20px; }
+
+.keyline {
+  width: 45px;
+  margin: 8px 0 10px;
+  border-top: 1px solid #56817A; }
+
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.profile-pic {
+  margin-top: -5px;
+  margin-right: 18px; }
+  .profile-pic img {
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+    border: 2px solid #56817A; }
+
+.summary {
+  margin: 5px 0 5px; }
+
+/* Layouts */
+.page {
+  background: white;
+  width: 612px;
+  min-height: 792px;
+  display: block;
+  margin: 0 auto;
+  border-top: 10px solid #56817A;
+  padding: 36px 22px 30px 34px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
+  .page:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.left-column {
+  float: left;
+  width: 160px;
+  margin-right: 20px;
+  word-wrap: break-word; }
+
+.right-column {
+  width: auto;
+  overflow: hidden; }
+
+.item {
+  margin-bottom: 15px; }
+  .item:last-child {
+    margin-bottom: 0; }
+
+@media print {
+  body {
+    margin: 0; }
+  .page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 36px 0 30px;
+    box-shadow: none; }
+    .page .resume-header,
+    .page .resume-content {
+      padding: 0 22px 0 34px; }
+  .container {
+    page-break-inside: avoid; }
+  .work-container .item {
+    page-break-inside: avoid; }
+  .fa-external-link {
+    display: none; } }
+
+/* Components */
+.info-tag-container {
+  margin-bottom: 5px; }
+  .info-tag-container .fa {
+    font-size: 14px;
+    width: 12px;
+    margin-right: 5px;
+    text-align: center;
+    vertical-align: middle; }
+    .info-tag-container .fa.fa-map-marker {
+      font-size: 16px; }
+    .info-tag-container .fa.fa-mobile {
+      font-size: 18px; }
+    .info-tag-container .fa.fa-envelope-o {
+      font-size: 12px; }
+    .info-tag-container .fa.fa-desktop {
+      font-size: 11px; }
+    .info-tag-container .fa.fa-external-link {
+      width: auto;
+      font-size: inherit;
+      vertical-align: text-top; }
+  .info-tag-container .info-text {
+    font-size: 9px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 139px; }
+
+.references-container .fa {
+  font-size: 14px; }
+
+	</style>
+	</head>
+	<body>
+		<main id="resume" class="page">
+			<header class="resume-header clearfix">
+			    <div class="profile-header pull-left">
+			        <h2>Adam Siran</h2>
+			        <h1>Concepteur Développeur d&#x27;Applications</h1>
+			    </div>
+			    <div class="profile-pic pull-right">
+			        <img src="profile.jpg" alt="profile-pic">
+			    </div>
+			</header>
+			<div class="resume-content">
+				<aside class="left-column">
+					<div class="container about-container">
+					    <div class="title">
+					        <h3>Contact</h3>
+					        <div class="keyline"></div>
+					    </div>
+					        <div class="info-tag-container">
+					            <i class="fa fa-map-marker"></i>
+					        
+					                <h6 class="info-text">Maen Roch (35)</h6>
+					        </div>
+					        <div class="info-tag-container">
+					            <i class="fa fa-envelope-o"></i>
+					        
+					                <h6 class="info-text">
+					                    <a href="mailto:adam.siran@gmail.com" target="_blank">
+					                        adam.siran@gmail.com <i class="fa fa-external-link" aria-hidden="true"></i>
+					                    </a>
+					                </h6>
+					        </div>
+					        <div class="info-tag-container">
+					            <i class="fa fa-mobile"></i>
+					        
+					                <h6 class="info-text">
+					                    <a href="tel:+33601912148" target="_blank">
+					                        +33 6 01 91 21 48 <i class="fa fa-external-link" aria-hidden="true"></i>
+					                    </a>
+					                </h6>
+					        </div>
+					
+					</section>
+					    <div class="skills-container">
+					            <section class="container">
+					                    <div class="title">
+					                        <h3>Codage</h3>
+					                        <div class="keyline"></div>
+					                    </div>                    <ul class="minimal">
+					                            <li><h6>Java</h6></li>
+					                            <li><h6>SQL</h6></li>
+					                            <li><h6>HTML/CSS</h6></li>
+					                            <li><h6>Shell Unix</h6></li>
+					                            <li><h6>YAML</h6></li>
+					                    </ul>
+					            </section>
+					            <section class="container">
+					                    <div class="title">
+					                        <h3>Systèmes</h3>
+					                        <div class="keyline"></div>
+					                    </div>                    <ul class="minimal">
+					                            <li><h6>Linux</h6></li>
+					                            <li><h6>Windows</h6></li>
+					                            <li><h6>Android</h6></li>
+					                            <li><h6>Docker</h6></li>
+					                            <li><h6>Active Directory</h6></li>
+					                    </ul>
+					            </section>
+					            <section class="container">
+					                    <div class="title">
+					                        <h3>Domaines IT</h3>
+					                        <div class="keyline"></div>
+					                    </div>                    <ul class="minimal">
+					                            <li><h6>Administration</h6></li>
+					                            <li><h6>Déploiement</h6></li>
+					                            <li><h6>Maintenance</h6></li>
+					                            <li><h6>Infra réseau</h6></li>
+					                    </ul>
+					            </section>
+					    </div>
+					    <div class="container languages-container">
+					        <div class="title">
+					            <h3>Langues</h3>
+					            <div class="keyline"></div>
+					        </div>
+					        <ul class="minimal">
+					                <li>
+					                    <h6>Français <em>(Bilingue)</em></h6>
+					                </li>
+					                <li>
+					                    <h6>Anglais <em>(Bilingue)</em></h6>
+					                </li>
+					                <li>
+					                    <h6>Hébreu <em>(Courant)</em></h6>
+					                </li>
+					        </ul>
+					    </div>
+					    <div class="container interests-container">
+					        <div class="title">
+					            <h3>Centres d’Intérêt</h3>
+					            <div class="keyline"></div>
+					        </div>
+					           <ul class="minimal">
+					                            <li><h6>L'informatique</h6></li>
+					                            <li><h6>Jouer de la guitare</h6></li>
+					                            <li><h6>Le Specialty Coffee</h6></li>
+					                            <li><h6>Science-fiction et Fantasy</h6></li>
+					                    </ul>
+					    </div>
+				</aside>
+				<div class="right-column">
+					        <div class="container summary-container">
+					            <div class="title">
+					                <h3>Profil</h3>
+					                <div class="keyline"></div>
+					            </div>            <p class="summary">
+					                Stagiaire suivant une POEC développeur Java, à la recherche d&#x27;une entreprise pour effectuer mon alternance de Concepteur Développeur d&#x27;Applications et renforcer mes compétences pratiques.
+					            </p>
+					        </div>
+					<div class="container work-container">
+					    <div class="title">
+					        <h3>Expérience Professionnelle</h3>
+					        <div class="keyline"></div>
+					    </div>
+					        <section class="item">
+					            <div class="section-header clearfix">
+					                <h5 class="italic pull-right">
+					                        <span class="startDate">01/2020</span>
+					                        <span class="endDate"> - 02/2021</span>
+					                </h5>
+					            </div>
+					            <h4>Administrateur Systèmes et Réseaux</h4>
+					
+					            <p class="summary"><a href="https://comminter.com/societe/">Comminter</a> | Solutions d’accès internet public pour commerces.</p>
+					
+					            <ul>
+					                <li>Intégrer, préparer et mettre en service les équipements.</li>
+					                <li>Surveiller à distance le parc d’équipements et réaliser le support niveau 2.</li>
+					                <li>Élaborer un plan d&#x27;implantation réseau selon les besoins de l’établissement.</li>
+					                <li>Participer aux projets de mise en oeuvre de nouvelles solutions et les évaluer.</li>
+					                <li>Administrer les serveurs.</li>
+					            </ul>
+					        </section>
+					        <section class="item">
+					            <div class="section-header clearfix">
+					                <h5 class="italic pull-right">
+					                        <span class="startDate">07/2018</span>
+					                        <span class="endDate"> - 08/2019</span>
+					                </h5>
+					            </div>
+					            <h4>Technicien Réseaux et Télécoms</h4>
+					
+					            <p class="summary"><a href="https://experisfrance.fr/">Proservia</a> | Prestation de services informatiques pour Orange Business Services.</p>
+					
+					            <ul>
+					                <li>Piloter les étapes de création, modification et résiliation de l’équipement réseau (data et voix) et réaliser sa configuration, selon la commande commerciale du client final.</li>
+					            </ul>
+					        </section>
+					        <section class="item">
+					            <div class="section-header clearfix">
+					                <h5 class="italic pull-right">
+					                        <span class="startDate">08/2015</span>
+					                        <span class="endDate"> - 08/2016</span>
+					                </h5>
+					            </div>
+					            <h4>Technicien Assistance Utilisateurs</h4>
+					
+					            <p class="summary"><a href="https://www.econocom.com/">Econocom</a> | Prestation de services informatiques pour le groupe Virbac.</p>
+					
+					            <ul>
+					                <li>Helpdesk : conseil et support à l’utilisateur, maintenance, déploiement de matériel et logiciels.</li>
+					                <li>Patch Management : contrôler les mises à jour de sécurité et fonctionnelles, gérer leur déploiement sur le parc.</li>
+					            </ul>
+					        </section>
+					</div>
+					<div class="container education-container">
+					    <div class="title">
+					        <h3>Formation</h3>
+					        <div class="keyline"></div>
+					    </div>
+					        <section class="item">
+					            <div class="section-header clearfix">
+					                <h3 class="bold pull-left">
+					                        ENI Ecole Informatique
+					                </h3>
+					                <h5 class="italic pull-right">
+					                        <span class="startDate">12/2022</span>
+					                        <span class="endDate"> - 03/2023</span>
+					                </h5>
+					            </div>
+					            <h4>POEC Développeur Java</h4>
+					
+					
+					        </section>
+					        <section class="item">
+					            <div class="section-header clearfix">
+					                <h3 class="bold pull-left">
+					                        GRETA de Bretagne Occidentale
+					                </h3>
+					                <h5 class="italic pull-right">
+					                        <span class="startDate">09/2010</span>
+					                        <span class="endDate"> - 06/2011</span>
+					                </h5>
+					            </div>
+					            <h4>BTS Informatique de Gestion, option ARLE</h4>
+					
+					
+					        </section>
+					        <section class="item">
+					            <div class="section-header clearfix">
+					                <h3 class="bold pull-left">
+					                        L.P. Coëtlogon
+					                </h3>
+					                <h5 class="italic pull-right">
+					                        <span class="startDate">09/2007</span>
+					                        <span class="endDate"> - 06/2008</span>
+					                </h5>
+					            </div>
+					            <h4>Bac Pro MRIM</h4>
+					
+					
+					        </section>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
 </html>

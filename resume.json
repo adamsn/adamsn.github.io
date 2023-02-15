@@ -39,8 +39,8 @@
       "endDate": "2021-02-28",
       "summary": "Solutions d’accès Internet public pour commerces.",
       "highlights": [
-        "Intégrer, préparer et mettre en service les solutions d’accès Internet public vendues aux établissements clients.",
-        "Surveiller à distance l’équipement réseau et réaliser le support niveau 2.",
+        "Intégrer, préparer et mettre en service les équipements.",
+        "Surveiller à distance le parc d’équipements et réaliser le support niveau 2.",
         "Élaborer un plan d'implantation réseau selon les besoins de l’établissement.",
         "Participer aux projets de mise en oeuvre de nouvelles solutions et les évaluer.",
         "Administrer les serveurs."
@@ -132,7 +132,8 @@
         "Administration",
         "Déploiement",
         "Maintenance",
-        "Infra réseau"
+        "Infra réseau",
+        "Gestion de parc"
       ]
     }
   ],
@@ -152,10 +153,11 @@
   ],
   "interests": [
     {
-      "name": "Guitare",
       "keywords": [
-        "Ferrets",
-        "Unicorns"
+        "L'informatique",
+        "Jouer de la guitare",
+        "Le Specialty Coffee",
+        "Science-fiction et Fantasy"
       ]
     }
   ]
