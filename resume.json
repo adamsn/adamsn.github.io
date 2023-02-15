@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "theme": "jsonresume-theme-caffeine",
+    "lang": "fr"
+  },
+  "locale": {
+    "fr": {
+      "skills": "Compétences",
+      "education": "Formation",
+      "languages": "Langues"
+    }
+  },
+  "basics": {
+    "name": "Adam Siran",
+    "label": "Concepteur Développeur d'Applications",
+    "email": "adam.siran@gmail.com",
+    "image": "profile.jpg",
+    "phone": "+33 6 01 91 21 48",
+    "url": "adamsn@github.io",
+    "summary": "Stagiaire suivant une POEC développeur Java, à la recherche d'une entreprise pour effectuer mon alternance de Concepteur Développeur d'Applications et renforcer mes compétences pratiques.",
+    "location": {
+      "postalCode": "35",
+      "city": "Maen Roch",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "url": "https://www.linkedin.com/in/adam-siran-8104a963/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Comminter",
+      "position": "Administrateur Systèmes et Réseaux",
+      "url": "https://comminter.com/societe/",
+      "startDate": "2020-01-27",
+      "endDate": "2021-02-28",
+      "summary": "Solutions d’accès Internet public pour commerces.",
+      "highlights": [
+        "Intégrer, préparer et mettre en service les solutions d’accès Internet public vendues aux établissements clients.",
+        "Surveiller à distance l’équipement réseau et réaliser le support niveau 2.",
+        "Élaborer un plan d'implantation réseau selon les besoins de l’établissement.",
+        "Participer aux projets de mise en oeuvre de nouvelles solutions et les évaluer.",
+        "Administrer les serveurs."
+      ]
+    },
+    {
+      "name": "Proservia @ Orange Business Services",
+      "position": "Technicien Réseaux et Télécoms",
+      "url": "https://experisfrance.fr/",
+      "startDate": "2018-07-23",
+      "endDate": "2019-08-30",
+      "summary": "Prestation de services de télécommunication et informatiques pour les entreprises.",
+      "highlights": [
+        "Piloter les étapes de création, modification et résiliation de l’équipement réseau (data et voix) et réaliser sa configuration, selon la commande commerciale du client final."
+      ]
+    },
+    {
+      "name": "Econocom @ Virbac",
+      "position": "Technicien Assistance Utilisateurs",
+      "url": "https://www.econocom.com/",
+      "startDate": "2015-08",
+      "endDate": "2016-08",
+      "summary": "Prestation de services informatiques sur site.",
+      "highlights": [
+        "Helpdesk : conseil et support à l’utilisateur, maintenance, déploiement de matériel et logiciels.",
+        "Patch Management : contrôler les mises à jour de sécurité et fonctionnelles, gérer leur déploiement sur le parc."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "ENI Ecole Informatique",
+      "url": "https://www.eni-ecole.fr/",
+      "area": "Développeur Java",
+      "studyType": "POEC",
+      "startDate": "2022-12-23",
+      "endDate": "2023-03-30"
+    },
+    {
+      "institution": "GRETA de Bretagne Occidentale",
+      "url": "https://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-occidentale/morlaix",
+      "area": "Informatique de Gestion, option ARLE",
+      "studyType": "BTS",
+      "startDate": "2010-09-01",
+      "endDate": "2011-06-19"
+    },
+    {
+      "institution": "L.P. Coëtlogon",
+      "url": "http://www.lyceecoetlogon.fr/",
+      "area": "MRIM",
+      "studyType": "Bac Pro",
+      "startDate": "2007-09-04",
+      "endDate": "2008-06-23"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Compétences",
+      "name": "Codage",
+      "keywords": [
+        "Java",
+        "SQL",
+        "HTML/CSS",
+        "Shell Unix",
+        "YAML"
+      ]
+    },
+    {
+      "name": "Systèmes",
+      "keywords": [
+        "Linux",
+        "Windows",
+        "Android",
+        "Docker",
+        "Active Directory"
+      ]
+    },
+    {
+      "name": "Domaines IT",
+      "keywords": [
+        "Administration",
+        "Déploiement",
+        "Maintenance",
+        "Infra réseau"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Français",
+      "fluency": "Bilingue"
+    },
+    {
+      "language": "Anglais",
+      "fluency": "Bilingue"
+    },
+    {
+      "language": "Hébreu",
+      "fluency": "Courant"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Guitare",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ]
+}
