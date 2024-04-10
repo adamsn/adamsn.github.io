@@ -1,650 +1,757 @@
 <!doctype html>
 <html lang="fr">
-	<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-	<title>Adam Siran, Développeur</title>
-	<link rel="shortcut icon" type="image/jpg" href="favicon.png" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<style>
-		/* Utils */
-/*----- Colors -----*/
-/*----- Fonts -----*/
-/*----- Dimensions and sizes -----*/
-/* Base */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04zwV_pQ1T3xN3K1c3sB361us.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04z306qf9KHRHwsVx7iw5MXmY.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 300;
-  src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v11/2HG_tEPiQ4Z6795cGfdivKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/LqowQDslGv4DmUBAfWa2Vw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
-}
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, user-scalable=no, minimal-ui" name="viewport">
+    <title>Adam Siran, Développeur</title>
+    <link href="favicon.png" rel="shortcut icon" type="image/jpg"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        /* Utils */
+        /*----- Colors -----*/
+        /*----- Fonts -----*/
+        /*----- Dimensions and sizes -----*/
+        /* Base */
+        @font-face {
+            font-family: 'Josefin Sans';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04zwV_pQ1T3xN3K1c3sB361us.ttf) format('truetype');
+        }
 
-body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  background: #f8f8f8;
-  margin: 50px 0 100px;
-  letter-spacing: .3px;
-  color: #39424B; }
+        @font-face {
+            font-family: 'Josefin Sans';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04z306qf9KHRHwsVx7iw5MXmY.ttf) format('truetype');
+        }
 
-		header h4 {
-			margin-right: -10px;
-			font-weight: 500;
-			color: #56817A
-		}
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
+        }
 
-h1, h2, h3, h4, h5, h6 {
-  text-transform: uppercase;
-  margin: 0; }
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
+        }
 
-h1 {
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 22px;
-  letter-spacing: 0; }
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
+        }
 
-h2 {
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: .5px; }
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v11/2HG_tEPiQ4Z6795cGfdivKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+        }
 
-h3 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  letter-spacing: .4px; }
-  h3.bold {
-    font-weight: 700; }
-  h3.colored {
-    font-weight: 500;
-    color:#56817A
-  }
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/LqowQDslGv4DmUBAfWa2Vw.ttf) format('truetype');
+        }
 
-h4 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 12px; }
-  h4.bold {
-    font-weight: 700; }
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+        }
 
-h5 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 11px; }
-  h5.italic {
-    font-style: italic; }
+        body {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            background: #f8f8f8;
+            margin: 50px 0 100px;
+            letter-spacing: .3px;
+            color: #39424B;
+        }
 
-h6 {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 10px; }
+        header h4 {
+            margin-right: -10px;
+            font-weight: 500;
+            color: #56817A
+        }
 
-a {
-  color: inherit;
-  text-decoration: inherit; }
-  a:hover {
-    color: #2895F1; }
-  a .fa-external-link {
-    font-size: 10px;
-    vertical-align: text-top; }
+        h1, h2, h3, h4, h5, h6 {
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-p,
-li {
-  font-size: 11px;
-	text-align: justify;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
-}
+        h1 {
+            font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 22px;
+            letter-spacing: 0;
+        }
 
-blockquote {
-  font-size: 11px;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  margin: 10px 25px; }
+        h2 {
+            font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: .5px;
+        }
 
-em {
-  color: #999; }
+        h3 {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: .4px;
+        }
 
-ul {
-  margin: 10px 0 0;
-	list-style: none;
-  -webkit-padding-start: 25px }
-  ul.minimal {
-    padding: 0 }
-    ul.minimal li {
-      margin-bottom: 3px }
-  ul.two-column {
-    -webkit-column-count: 2;
-    -webkit-column-gap: 28px;
-    -moz-column-count: 2;
-         column-count: 2;
-    -moz-column-gap: 28px;
-         column-gap: 28px }
-    ul.two-column li {
-      padding-left: 0 }
-		ul:not(.minimal) li {
-			margin-left: -16px;
-		}
-	ul:not(.minimal) li:before {
-		position: absolute;
-    font-family: 'FontAwesome';
-    content: '\f054';
-    margin:1px 5px 0 -15px;
-    color:#56817A }
+        h3.bold {
+            font-weight: 700;
+        }
 
-@page {
-  size: A4; }
+        h3.colored {
+            font-weight: 500;
+            color: #56817A
+        }
 
-.container {
-  padding-top: 20px; }
+        h4 {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+        }
 
-.keyline {
-  width: 45px;
-  margin: 8px 0 10px;
-  border-top: 1px solid #56817A; }
+        h4.bold {
+            font-weight: 700;
+        }
 
-.pull-left {
-  float: left; }
+        h5 {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            font-size: 11px;
+        }
 
-.pull-right {
-  float: right; }
+        h5.italic {
+            font-style: italic;
+        }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
+        h6 {
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 10px;
+        }
 
-.profile-pic {
-  margin-top: -4px;
-  margin-right: 16px;
-  margin-bottom: -28px;
-}
-  .profile-pic img {
-    height: 84px;
-    width: 84px;
-    border-radius: 50%;
-    border: 2px solid #56817A; }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
 
-.summary {
-  margin: 5px 0 5px; }
+        a:hover {
+            color: #2895F1;
+        }
 
-/* Layouts */
-.page {
-  background: white;
-  width: 612px;
-  min-height: 792px;
-  display: block;
-  margin: 0 auto;
-  border-top: 10px solid #56817A;
-  padding: 36px 22px 30px 22px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
-  .page:after {
-    content: "";
-    display: table;
-    clear: both; }
+        a .fa-external-link {
+            font-size: 10px;
+            vertical-align: text-top;
+        }
 
-.left-column {
-  float: left;
-  width: 160px;
-  margin-right: 20px;
-  word-wrap: break-word; }
+        p,
+        li {
+            font-size: 11px;
+            text-align: justify;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+        }
 
-.right-column {
-  width: auto;
-  overflow: hidden; }
+        blockquote {
+            font-size: 11px;
+            font-family: "Lato", Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            margin: 10px 25px;
+        }
 
-.item {
-  margin-bottom: 15px; }
-  .item:last-child {
-    margin-bottom: 0; }
+        em {
+            color: #999;
+        }
 
-@media print {
-  body {
-    margin: 0; }
-  .page {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 36px 0 30px;
-    box-shadow: none; }
-    .page .resume-header,
-    .page .resume-content {
-      padding: 0 22px 0 22px; }
-  .container {
-    page-break-inside: avoid; }
-  .work-container .item {
-    page-break-inside: avoid; }
-  .fa-external-link {
-    display: none; } }
+        ul {
+            margin: 10px 0 0;
+            list-style: none;
+            -webkit-padding-start: 25px
+        }
 
-/* Components */
-.info-tag-container {
-  margin-bottom: 5px; }
-  .info-tag-container .fa {
-    font-size: 14px;
-    width: 12px;
-    margin-right: 5px;
-    text-align: center;
-    vertical-align: middle; }
-    .info-tag-container .fa.fa-map-marker {
-      font-size: 16px; }
-    .info-tag-container .fa.fa-mobile {
-      font-size: 18px; }
-    .info-tag-container .fa.fa-envelope-o {
-      font-size: 12px; }
-    .info-tag-container .fa.fa-desktop {
-      font-size: 11px; }
-    .info-tag-container .fa.fa-external-link {
-      width: auto;
-      font-size: inherit;
-      vertical-align: text-top; }
-  .info-tag-container .info-text {
-    font-size: 9px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 139px; }
+        ul.minimal {
+            padding: 0
+        }
 
-.references-container .fa {
-  font-size: 14px; }
+        ul.minimal li {
+            margin-bottom: 3px
+        }
 
-.bullet::before {
-	content: "•";
-	color: #56817A;
-}
+        ul.two-column {
+            -webkit-column-count: 2;
+            -webkit-column-gap: 28px;
+            -moz-column-count: 2;
+            column-count: 2;
+            -moz-column-gap: 28px;
+            column-gap: 28px
+        }
 
-	</style>
-	</head>
-	<body>
-		<main id="resume" class="page">
-			<header class="resume-header clearfix">
-			    <div class="profile-header pull-left">
-			        <h2>Adam Siran</h2>
-			        <h1>Concepteur Développeur d&#x27;Applications</h1>
-				<div class="pull-right">
-					<h4>Stage du 7 octobre au 29 novembre 2024</h4>
-				</div>
-			    </div>
-			    <div class="profile-pic pull-right">
-			        <img src="profile.jpg" alt="profile-pic">
-			    </div>
-			</header>
-			<div class="resume-content">
-				<aside class="left-column">
-					<div class="container about-container">
-					        <div class="info-tag-container">
-					            <i class="fa fa-map-marker"></i>
-					        
-					                <h6 class="info-text">Maen Roch (35)</h6>
-					        </div>
-					        <div class="info-tag-container">
-					            <i class="fa fa-envelope-o"></i>
-					        
-					                <h6 class="info-text">
-					                    <a href="mailto:adam.siran@gmail.com" rel="noopener" target="_blank">
-					                        adam.siran@gmail.com <i class="fa fa-external-link" aria-hidden="true"></i>
-					                    </a>
-					                </h6>
-					        </div>
-					        <div class="info-tag-container">
-					            <i class="fa fa-whatsapp"></i>
-					        
-					                <h6 class="info-text">
-					                    <a href="tel:+33601912148" rel="noopener" target="_blank">
-					                        +33 6 01 91 21 48 <i class="fa fa-external-link" aria-hidden="true"></i>
-					                    </a>
-					                </h6>
-					        </div>
-					
-					                        <div class="info-tag-container">
-					                            <i class="fa fa-linkedin-square"></i>
-					                        
-					                                <h6 class="info-text">
-					                                    <a href="https://www.linkedin.com/in/adam-siran/" target="_blank">
-					                                        in/adam-siran <i class="fa fa-external-link" aria-hidden="true"></i>
-					                                    </a>
-					                                </h6>
-					                        </div>
-					    <div class="skills-container">
-					            <section class="container">
-					                    <div class="title">
-					                        <h3>Programmation</h3>
-					                        <div class="keyline"></div>
-					                    </div>
-									<ul class="minimal">
-					                            <li><h6>Java <span class="bullet"></span> Spring</h6></li>
-					                            <li><h6>Python</h6></li>
-					                            <li><h6>JavaScript <span class="bullet"></span> Angular</h6></li>
-					                            <li><h6>SQL</h6></li>
-					                            <li><h6>Dart <span class="bullet"></span> Flutter</h6></li>
-					                            <li><h6>PHP <span class="bullet"></span> Symfony</h6></li>
-					                            <li><h6>HTML/CSS</h6></li>
-					                    </ul>
-					            </section>
-					            <section class="container">
-					                    <div class="title">
-					                        <h3>Déploiement</h3>
-					                        <div class="keyline"></div>
-					                    </div>                    <ul class="minimal">
-					                            <li><h6>Docker</h6></li>
-					                            <li><h6>Ansible</h6></li>
-					                            <li><h6>Virtualisation</h6></li>
-					                    </ul>
-					            </section>
-					            <section class="container">
-					                    <div class="title">
-					                        <h3>Méthodes</h3>
-					                        <div class="keyline"></div>
-					                    </div>                    <ul class="minimal">
-					                            <li><h6>Agile</h6></li>
-					                            <li><h6>UML</h6></li>
-					                    </ul>
-					            </section>
-					            <section class="container">
-					                    <div class="title">
-					                        <h3>Systèmes</h3>
-					                        <div class="keyline"></div>
-					                    </div>                    <ul class="minimal">
-					                            <li><h6>Linux</h6></li>
-					                            <li><h6>Windows</h6></li>
-					                            <li><h6>Android</h6></li>
-					                            <li><h6>Active Directory</h6></li>
-					                    </ul>
-					            </section>
-					            <section class="container">
-					                    <div class="title">
-					                        <h3>Domaines IT</h3>
-					                        <div class="keyline"></div>
-					                    </div>                    <ul class="minimal">
-					                            <li><h6>Administration</h6></li>
-					                            <li><h6>Déploiement</h6></li>
-					                            <li><h6>Maintenance</h6></li>
-					                            <li><h6>Infra réseau</h6></li>
-					                            <li><h6>Gestion de parc</h6></li>
-					                    </ul>
-					            </section>
-					    </div>
-					    <div class="container languages-container">
-					        <div class="title">
-					            <h3>Langues</h3>
-					            <div class="keyline"></div>
-					        </div>
-					        <ul class="minimal">
-					                <li>
-					                    <h6>Français <em>(Bilingue)</em></h6>
-					                </li>
-					                <li>
-					                    <h6>Anglais <em>(Bilingue)</em></h6>
-					                </li>
-					        </ul>
-					    </div>
-					    <div class="container certificates-container">
-					        <div class="title">
-					            <h3>Certifications</h3>
-					            <div class="keyline"></div>
-					        </div>
-					        <ul class="minimal">
-					                <li>
-					                    <h6>IELTS <em><a href="https://www.ielts.org/for-test-takers/how-ielts-is-scored" rel="noopener" target="_blank">(8/9) <i class="fa fa-external-link" aria-hidden="true"></i>
-								    </a></em></h6>
-					                </li>
-					                <li>
-					                    <h6>Cisco CCNA 1 – 3 </h6>
-					                </li>
-					        </ul>
-					    </div>
-					    <div class="container interests-container">
-					        <div class="title">
-					            <h3>Centres d’Intérêt</h3>
-					            <div class="keyline"></div>
-					        </div>
-					            <section class="item">
-					                    <ul class="minimal">
-					                            <li>La cyberculture</li>
-					                            <li>Jouer de la guitare</li>
-					                            <li>Le Specialty Coffee</li>
-					                            <li>Science-fiction et Fantasy</li>
-					                    </ul>
-					            </section>
-					    </div>
-					</div>
-				</aside>
-				<div class="right-column">
-					        <div class="container summary-container">
-					            <div class="title">
-					                <h3 class="bold">Profil</h3>
-					                <div class="keyline"></div>
-					            </div>            <p class="summary">
-					                Actuellement en formation au titre de Concepteur Développeur d'Applications, à la recherche d&#x27;une entreprise pour effectuer mon stage et avancer un projet opérationnel.
-					            </p>
-					        </div>
-					
-					<div class="container education-container">
-					    <div class="title">
-					        <h3 class="bold">Formation</h3>
-					        <div class="keyline"></div>
-					    </div>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://www.eni-ecole.fr/" target="_blank">
-					                            ENI Ecole Informatique <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">02/2024</span>
-					                        <span class="endDate"> – 12/2024</span>
-					                </h5>
-					            </div>
-					            <h4>Bac+4 Concepteur Développeur d'Applications</h4>
-					
-					<p class="summary">Projets :</p>
-							<ul>
-					                <li>Développement d’un jeu de Memory avec HTML, CSS et JavaScript.</li>
-					                <li>Développement d’un site d’enchères sous Java Spring Boot et SQL Server :
-application web organisée en couches.</li>
-					                <li>Analyse, conception et développement d’un site d’organisation d’évènements avec PHP et MySQL : définition de tests et d’outils de passage des tests.</li>
-					            </ul>
-					        </section>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://www.eni-ecole.fr/" target="_blank">
-					                            ENI Ecole Informatique <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">12/2022</span>
-					                        <span class="endDate"> – 03/2023</span>
-					                </h5>
-					            </div>
-					            <h4>POEC Développeur Java</h4>
-					
-					
-					        </section>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-occidentale/morlaix" target="_blank">
-					                            GRETA de Bretagne Occidentale <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">09/2010</span>
-					                        <span class="endDate"> – 06/2011</span>
-					                </h5>
-					            </div>
-					            <h4>BTS Informatique de Gestion, option ARLE</h4>
-					
-					
-					        </section>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://lycee-coetlogon.ac-rennes.fr/" target="_blank">
-					                            L.P. Coëtlogon <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">09/2007</span>
-					                        <span class="endDate"> – 06/2008</span>
-					                </h5>
-					            </div>
-					            <h4>Bac Pro MRIM</h4>
-					
-					
-					        </section>
-					</div>
-					<div class="container work-container">
-					    <div class="title">
-					        <h3 class="bold">Expérience Professionnelle</h3>
-					        <div class="keyline"></div>
-					    </div>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://comminter.com/societe/" target="_blank">
-					                            Comminter <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">01/2020</span>
-					                        <span class="endDate"> – 02/2021</span>
-					                </h5>
-					            </div>
-					            <h4>Administrateur Systèmes et Réseaux</h4>
-					
-					            <p class="summary">Solutions d’accès internet public pour commerces.</p>
-					
-					            <ul>
-					                <li>Intégrer, préparer et mettre en service les équipements.</li>
-					                <li>Surveiller à distance le parc d’équipements et réaliser le support niveau 2.</li>
-					                <li>Élaborer un plan d'implantation réseau selon les besoins de l’établissement.</li>
-					                <li>Participer aux projets de mise en œuvre de nouvelles solutions et les évaluer.</li>
-					                <li>Administrer les serveurs.</li>
-					            </ul>
-					        </section>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://experisfrance.fr/" target="_blank">
-					                            Proservia <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">07/2018</span>
-					                        <span class="endDate"> – 08/2019</span>
-					                </h5>
-					            </div>
-					            <h4>Technicien Réseaux et Télécoms</h4>
-					
-					            <p class="summary">Prestation de services informatiques pour Orange Business Services.</p>
-					
-					            <ul>
-					                <li>Piloter les étapes de création, modification et résiliation de l’équipement réseau (data et voix) et réaliser sa configuration, selon la commande commerciale du client final.</li>
-					            </ul>
-					        </section>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://www.econocom.com/" target="_blank">
-					                            Econocom <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">08/2015</span>
-					                        <span class="endDate"> – 08/2016</span>
-					                </h5>
-					            </div>
-					            <h4>Technicien Assistance Utilisateurs</h4>
-					
-					            <p class="summary">Prestation de services informatiques pour le groupe Virbac.</p>
-					
-					            <ul>
-					                <li>Helpdesk : conseil et support à l’utilisateur, maintenance, déploiement de matériel et logiciels.</li>
-					                <li>Patch Management : contrôler les mises à jour de sécurité et fonctionnelles, gérer leur déploiement sur le parc.</li>
-					            </ul>
-					        </section>                <section class="item">
-						<div class="section-header clearfix">
-							<h3 class="pull-left colored">Divers Intérim
-							</h3>
-							<h5 class="italic pull-right">
-								<span class="startDate">01/2012</span>
-								<span class="endDate"> ~ 04/2015</span>
-							</h5>
-						</div>
-					</section>
-					        <section class="item">
-					            <div class="section-header clearfix">
-					                <h3 class="pull-left colored">
-					                        <a href="https://siranel.com/" target="_blank">
-					                            Siranel <i class="fa fa-external-link" aria-hidden="true"></i>
-					                        </a>
-					                </h3>
-					                <h5 class="italic pull-right">
-					                        <span class="startDate">09/2009</span>
-					                        <span class="endDate"> – 08/2010</span>
-					                </h5>
-					            </div>
-					            <h4>Technicien Systèmes et Réseaux</h4>
-					
-					            <p class="summary">Services informatiques pour petites entreprises et particuliers</p>
-					
-					            <ul>
-					                <li>Intégrer, préparer, mettre en service les nouveaux équipements et réaliser le support niveau 2.</li>
-					                <li>Proposer et maintenir des solutions de réseau, stockage et virtualisation.</li>
-					                <li>Gérer les sauvegardes de données.</li>
-					                <li>Rédiger la documentation.</li>
-					            </ul>
-					        </section>
-					</div>
-				</div>
-			</div>
-		</main>
-	</body>
+        ul.two-column li {
+            padding-left: 0
+        }
+
+        ul:not(.minimal) li {
+            margin-left: -16px;
+        }
+
+        ul:not(.minimal) li:before {
+            position: absolute;
+            font-family: 'FontAwesome';
+            content: '\f054';
+            margin: 1px 5px 0 -15px;
+            color: #56817A
+        }
+
+        @page {
+            size: A4;
+        }
+
+        .container {
+            padding-top: 20px;
+        }
+
+        .keyline {
+            width: 45px;
+            margin: 8px 0 10px;
+            border-top: 1px solid #56817A;
+        }
+
+        .pull-left {
+            float: left;
+        }
+
+        .pull-right {
+            float: right;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .profile-pic {
+            margin-top: -4px;
+            margin-right: 16px;
+            margin-bottom: -28px;
+        }
+
+        .profile-pic img {
+            height: 84px;
+            width: 84px;
+            border-radius: 50%;
+            border: 2px solid #56817A;
+        }
+
+        .summary {
+            margin: 5px 0 5px;
+        }
+
+        /* Layouts */
+        .page {
+            background: white;
+            width: 612px;
+            min-height: 792px;
+            display: block;
+            margin: 0 auto;
+            border-top: 10px solid #56817A;
+            padding: 36px 22px 30px 22px;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .page:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .left-column {
+            float: left;
+            width: 160px;
+            margin-right: 20px;
+            word-wrap: break-word;
+        }
+
+        .right-column {
+            width: auto;
+            overflow: hidden;
+        }
+
+        .item {
+            margin-bottom: 15px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+
+            .page {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 36px 0 30px;
+                box-shadow: none;
+            }
+
+            .page .resume-header,
+            .page .resume-content {
+                padding: 0 22px 0 22px;
+            }
+
+            .container {
+                page-break-inside: avoid;
+            }
+
+            .work-container .item {
+                page-break-inside: avoid;
+            }
+
+            .fa-external-link {
+                display: none;
+            }
+        }
+
+        /* Components */
+        .info-tag-container {
+            margin-bottom: 5px;
+        }
+
+        .info-tag-container .fa {
+            font-size: 14px;
+            width: 12px;
+            margin-right: 5px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .info-tag-container .fa.fa-map-marker {
+            font-size: 16px;
+        }
+
+        .info-tag-container .fa.fa-mobile {
+            font-size: 18px;
+        }
+
+        .info-tag-container .fa.fa-envelope-o {
+            font-size: 12px;
+        }
+
+        .info-tag-container .fa.fa-desktop {
+            font-size: 11px;
+        }
+
+        .info-tag-container .fa.fa-external-link {
+            width: auto;
+            font-size: inherit;
+            vertical-align: text-top;
+        }
+
+        .info-tag-container .info-text {
+            font-size: 9px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 139px;
+        }
+
+        .references-container .fa {
+            font-size: 14px;
+        }
+
+        .bullet::before {
+            content: "•";
+            color: #56817A;
+        }
+
+    </style>
+</head>
+<body>
+<main class="page" id="resume">
+    <header class="resume-header clearfix">
+        <div class="profile-header pull-left">
+            <h2>Adam Siran</h2>
+            <h1>Concepteur Développeur d&#x27;Applications</h1>
+            <div class="pull-right">
+                <h4>Stage du 7 octobre au 29 novembre 2024</h4>
+            </div>
+        </div>
+        <div class="profile-pic pull-right">
+            <img alt="profile-pic" src="profile.jpg">
+        </div>
+    </header>
+    <div class="resume-content">
+        <aside class="left-column">
+            <div class="container about-container">
+                <div class="info-tag-container">
+                    <i class="fa fa-map-marker"></i>
+
+                    <h6 class="info-text">Maen Roch (35)</h6>
+                </div>
+                <div class="info-tag-container">
+                    <i class="fa fa-envelope-o"></i>
+
+                    <h6 class="info-text">
+                        <a href="mailto:adam.siran@gmail.com" rel="noopener" target="_blank">
+                            adam.siran@gmail.com <i aria-hidden="true" class="fa fa-external-link"></i>
+                        </a>
+                    </h6>
+                </div>
+                <div class="info-tag-container">
+                    <i class="fa fa-whatsapp"></i>
+
+                    <h6 class="info-text">
+                        <a href="tel:+33601912148" rel="noopener" target="_blank">
+                            +33 6 01 91 21 48 <i aria-hidden="true" class="fa fa-external-link"></i>
+                        </a>
+                    </h6>
+                </div>
+
+                <div class="info-tag-container">
+                    <i class="fa fa-linkedin-square"></i>
+
+                    <h6 class="info-text">
+                        <a href="https://www.linkedin.com/in/adam-siran/" target="_blank">
+                            in/adam-siran <i aria-hidden="true" class="fa fa-external-link"></i>
+                        </a>
+                    </h6>
+                </div>
+                <div class="skills-container">
+                    <section class="container">
+                        <div class="title">
+                            <h3>Programmation</h3>
+                            <div class="keyline"></div>
+                        </div>
+                        <ul class="minimal">
+                            <li><h6>Java <span class="bullet"></span> Spring</h6></li>
+                            <li><h6>Python</h6></li>
+                            <li><h6>JavaScript <span class="bullet"></span> Angular</h6></li>
+                            <li><h6>SQL</h6></li>
+                            <li><h6>Dart <span class="bullet"></span> Flutter</h6></li>
+                            <li><h6>PHP <span class="bullet"></span> Symfony</h6></li>
+                            <li><h6>HTML/CSS</h6></li>
+                        </ul>
+                    </section>
+                    <section class="container">
+                        <div class="title">
+                            <h3>Déploiement</h3>
+                            <div class="keyline"></div>
+                        </div>
+                        <ul class="minimal">
+                            <li><h6>Docker</h6></li>
+                            <li><h6>Ansible</h6></li>
+                            <li><h6>Virtualisation</h6></li>
+                        </ul>
+                    </section>
+                    <section class="container">
+                        <div class="title">
+                            <h3>Méthodes</h3>
+                            <div class="keyline"></div>
+                        </div>
+                        <ul class="minimal">
+                            <li><h6>Agile</h6></li>
+                            <li><h6>UML</h6></li>
+                        </ul>
+                    </section>
+                    <section class="container">
+                        <div class="title">
+                            <h3>Systèmes</h3>
+                            <div class="keyline"></div>
+                        </div>
+                        <ul class="minimal">
+                            <li><h6>Linux</h6></li>
+                            <li><h6>Windows</h6></li>
+                            <li><h6>Android</h6></li>
+                            <li><h6>Active Directory</h6></li>
+                        </ul>
+                    </section>
+                    <section class="container">
+                        <div class="title">
+                            <h3>Domaines IT</h3>
+                            <div class="keyline"></div>
+                        </div>
+                        <ul class="minimal">
+                            <li><h6>Administration</h6></li>
+                            <li><h6>Déploiement</h6></li>
+                            <li><h6>Maintenance</h6></li>
+                            <li><h6>Infra réseau</h6></li>
+                            <li><h6>Gestion de parc</h6></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="container languages-container">
+                    <div class="title">
+                        <h3>Langues</h3>
+                        <div class="keyline"></div>
+                    </div>
+                    <ul class="minimal">
+                        <li>
+                            <h6>Français <em>(Bilingue)</em></h6>
+                        </li>
+                        <li>
+                            <h6>Anglais <em>(Bilingue)</em></h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container certificates-container">
+                    <div class="title">
+                        <h3>Certifications</h3>
+                        <div class="keyline"></div>
+                    </div>
+                    <ul class="minimal">
+                        <li>
+                            <h6>IELTS <em><a href="https://www.ielts.org/for-test-takers/how-ielts-is-scored"
+                                             rel="noopener" target="_blank">(8/9) <i aria-hidden="true"
+                                                                                     class="fa fa-external-link"></i>
+                            </a></em></h6>
+                        </li>
+                        <li>
+                            <h6>Cisco CCNA 1 – 3 </h6>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container interests-container">
+                    <div class="title">
+                        <h3>Centres d’Intérêt</h3>
+                        <div class="keyline"></div>
+                    </div>
+                    <section class="item">
+                        <ul class="minimal">
+                            <li>La cyberculture</li>
+                            <li>Jouer de la guitare</li>
+                            <li>Le Specialty Coffee</li>
+                            <li>Science-fiction et Fantasy</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </aside>
+        <div class="right-column">
+            <div class="container summary-container">
+                <div class="title">
+                    <h3 class="bold">Profil</h3>
+                    <div class="keyline"></div>
+                </div>
+                <p class="summary">
+                    Actuellement en formation au titre de Concepteur Développeur d'Applications, à la recherche d&#x27;une
+                    entreprise pour effectuer mon stage et avancer un projet opérationnel.
+                </p>
+            </div>
+
+            <div class="container education-container">
+                <div class="title">
+                    <h3 class="bold">Formation</h3>
+                    <div class="keyline"></div>
+                </div>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://www.eni-ecole.fr/" target="_blank">
+                                ENI Ecole Informatique <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">02/2024</span>
+                            <span class="endDate"> – 12/2024</span>
+                        </h5>
+                    </div>
+                    <h4>Bac+4 Concepteur Développeur d'Applications</h4>
+
+                    <p class="summary">Projets :</p>
+                    <ul>
+                        <li>Développement d’un jeu de Memory avec HTML, CSS et JavaScript.</li>
+                        <li>Développement d’un site d’enchères sous Java Spring Boot et SQL Server :
+                            application web organisée en couches.
+                        </li>
+                        <li>Analyse, conception et développement d’un site d’organisation d’évènements avec PHP et MySQL
+                            : définition de tests et d’outils de passage des tests.
+                        </li>
+                    </ul>
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://www.eni-ecole.fr/" target="_blank">
+                                ENI Ecole Informatique <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">12/2022</span>
+                            <span class="endDate"> – 03/2023</span>
+                        </h5>
+                    </div>
+                    <h4>POEC Développeur Java</h4>
+
+
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-occidentale/morlaix"
+                               target="_blank">
+                                GRETA de Bretagne Occidentale <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">09/2010</span>
+                            <span class="endDate"> – 06/2011</span>
+                        </h5>
+                    </div>
+                    <h4>BTS Informatique de Gestion, option ARLE</h4>
+
+
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://lycee-coetlogon.ac-rennes.fr/" target="_blank">
+                                L.P. Coëtlogon <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">09/2007</span>
+                            <span class="endDate"> – 06/2008</span>
+                        </h5>
+                    </div>
+                    <h4>Bac Pro MRIM</h4>
+
+
+                </section>
+            </div>
+            <div class="container work-container">
+                <div class="title">
+                    <h3 class="bold">Expérience Professionnelle</h3>
+                    <div class="keyline"></div>
+                </div>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://comminter.com/societe/" target="_blank">
+                                Comminter <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">01/2020</span>
+                            <span class="endDate"> – 02/2021</span>
+                        </h5>
+                    </div>
+                    <h4>Administrateur Systèmes et Réseaux</h4>
+
+                    <p class="summary">Solutions d’accès internet public pour commerces.</p>
+
+                    <ul>
+                        <li>Intégrer, préparer et mettre en service les équipements.</li>
+                        <li>Surveiller à distance le parc d’équipements et réaliser le support niveau 2.</li>
+                        <li>Élaborer un plan d'implantation réseau selon les besoins de l’établissement.</li>
+                        <li>Participer aux projets de mise en œuvre de nouvelles solutions et les évaluer.</li>
+                        <li>Administrer les serveurs.</li>
+                    </ul>
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://experisfrance.fr/" target="_blank">
+                                Proservia <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">07/2018</span>
+                            <span class="endDate"> – 08/2019</span>
+                        </h5>
+                    </div>
+                    <h4>Technicien Réseaux et Télécoms</h4>
+
+                    <p class="summary">Prestation de services informatiques pour Orange Business Services.</p>
+
+                    <ul>
+                        <li>Piloter les étapes de création, modification et résiliation de l’équipement réseau (data et
+                            voix) et réaliser sa configuration, selon la commande commerciale du client final.
+                        </li>
+                    </ul>
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://www.econocom.com/" target="_blank">
+                                Econocom <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">08/2015</span>
+                            <span class="endDate"> – 08/2016</span>
+                        </h5>
+                    </div>
+                    <h4>Technicien Assistance Utilisateurs</h4>
+
+                    <p class="summary">Prestation de services informatiques pour le groupe Virbac.</p>
+
+                    <ul>
+                        <li>Helpdesk : conseil et support à l’utilisateur, maintenance, déploiement de matériel et
+                            logiciels.
+                        </li>
+                        <li>Patch Management : contrôler les mises à jour de sécurité et fonctionnelles, gérer leur
+                            déploiement sur le parc.
+                        </li>
+                    </ul>
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">Divers Intérim
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">01/2012</span>
+                            <span class="endDate"> ~ 04/2015</span>
+                        </h5>
+                    </div>
+                </section>
+                <section class="item">
+                    <div class="section-header clearfix">
+                        <h3 class="pull-left colored">
+                            <a href="https://siranel.com/" target="_blank">
+                                Siranel <i aria-hidden="true" class="fa fa-external-link"></i>
+                            </a>
+                        </h3>
+                        <h5 class="italic pull-right">
+                            <span class="startDate">09/2009</span>
+                            <span class="endDate"> – 08/2010</span>
+                        </h5>
+                    </div>
+                    <h4>Technicien Systèmes et Réseaux</h4>
+
+                    <p class="summary">Services informatiques pour petites entreprises et particuliers</p>
+
+                    <ul>
+                        <li>Intégrer, préparer, mettre en service les nouveaux équipements et réaliser le support niveau
+                            2.
+                        </li>
+                        <li>Proposer et maintenir des solutions de réseau, stockage et virtualisation.</li>
+                        <li>Gérer les sauvegardes de données.</li>
+                        <li>Rédiger la documentation.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
 </html>
