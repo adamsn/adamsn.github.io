@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="fr">
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
@@ -69,6 +69,12 @@ body {
   letter-spacing: .3px;
   color: #39424B; }
 
+		header h4 {
+			margin-right: -10px;
+			font-weight: 500;
+			color: #56817A
+		}
+
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   margin: 0; }
@@ -77,7 +83,7 @@ h1 {
   font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 22px;
-  letter-spacing: 0px; }
+  letter-spacing: 0; }
 
 h2 {
   font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
@@ -127,7 +133,13 @@ a {
 
 p,
 li {
-  font-size: 11px; }
+  font-size: 11px;
+	text-align: justify;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
 
 blockquote {
   font-size: 11px;
@@ -156,11 +168,14 @@ ul {
          column-gap: 28px }
     ul.two-column li {
       padding-left: 0 }
+		ul:not(.minimal) li {
+			margin-left: -16px;
+		}
 	ul:not(.minimal) li:before {
 		position: absolute;
     font-family: 'FontAwesome';
     content: '\f054';
-    margin:0 5px 0 -15px;
+    margin:1px 5px 0 -15px;
     color:#56817A }
 
 @page {
@@ -207,7 +222,7 @@ ul {
   display: block;
   margin: 0 auto;
   border-top: 10px solid #56817A;
-  padding: 36px 22px 30px 34px;
+  padding: 36px 22px 30px 22px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5); }
   .page:after {
     content: "";
@@ -240,7 +255,7 @@ ul {
     box-shadow: none; }
     .page .resume-header,
     .page .resume-content {
-      padding: 0 22px 0 34px; }
+      padding: 0 22px 0 22px; }
   .container {
     page-break-inside: avoid; }
   .work-container .item {
@@ -277,6 +292,11 @@ ul {
 
 .references-container .fa {
   font-size: 14px; }
+
+.bullet::before {
+	content: "•";
+	color: #56817A;
+}
 
 	</style>
 	</head>
@@ -329,20 +349,40 @@ ul {
 					                                        in/adam-siran <i class="fa fa-external-link" aria-hidden="true"></i>
 					                                    </a>
 					                                </h6>
-					                        </div></section>
+					                        </div>
 					    <div class="skills-container">
 					            <section class="container">
 					                    <div class="title">
 					                        <h3>Programmation</h3>
 					                        <div class="keyline"></div>
-					                    </div>                    <ul class="minimal">
-					                            <li><h6>Java</h6></li>
+					                    </div>
+									<ul class="minimal">
+					                            <li><h6>Java <span class="bullet"></span> Spring</h6></li>
+					                            <li><h6>Python</h6></li>
+					                            <li><h6>JavaScript <span class="bullet"></span> Angular</h6></li>
 					                            <li><h6>SQL</h6></li>
+					                            <li><h6>Dart <span class="bullet"></span> Flutter</h6></li>
+					                            <li><h6>PHP <span class="bullet"></span> Symfony</h6></li>
 					                            <li><h6>HTML/CSS</h6></li>
-					                            <li><h6>JavaScript</h6></li>
-					                            <li><h6>Shell Unix</h6></li>
-					                            <li><h6>RegEx</h6></li>
-					                            <li><h6>YAML</h6></li>
+					                    </ul>
+					            </section>
+					            <section class="container">
+					                    <div class="title">
+					                        <h3>Déploiement</h3>
+					                        <div class="keyline"></div>
+					                    </div>                    <ul class="minimal">
+					                            <li><h6>Docker</h6></li>
+					                            <li><h6>Ansible</h6></li>
+					                            <li><h6>Virtualisation</h6></li>
+					                    </ul>
+					            </section>
+					            <section class="container">
+					                    <div class="title">
+					                        <h3>Méthodes</h3>
+					                        <div class="keyline"></div>
+					                    </div>                    <ul class="minimal">
+					                            <li><h6>Agile</h6></li>
+					                            <li><h6>UML</h6></li>
 					                    </ul>
 					            </section>
 					            <section class="container">
@@ -353,7 +393,6 @@ ul {
 					                            <li><h6>Linux</h6></li>
 					                            <li><h6>Windows</h6></li>
 					                            <li><h6>Android</h6></li>
-					                            <li><h6>Docker</h6></li>
 					                            <li><h6>Active Directory</h6></li>
 					                    </ul>
 					            </section>
@@ -395,7 +434,7 @@ ul {
 								    </a></em></h6>
 					                </li>
 					                <li>
-					                    <h6>Cisco CCNA 1 - 3 </h6>
+					                    <h6>Cisco CCNA 1 – 3 </h6>
 					                </li>
 					        </ul>
 					    </div>
@@ -413,6 +452,7 @@ ul {
 					                    </ul>
 					            </section>
 					    </div>
+					</div>
 				</aside>
 				<div class="right-column">
 					        <div class="container summary-container">
@@ -420,7 +460,7 @@ ul {
 					                <h3 class="bold">Profil</h3>
 					                <div class="keyline"></div>
 					            </div>            <p class="summary">
-					                Actuellement en formation au titre de Concepteur Développeur d'Applications, à la recherche d&#x27;une entreprise pour effectuer mon stage, perfectionner mes compétences pratiques et établir un projet.
+					                Actuellement en formation au titre de Concepteur Développeur d'Applications, à la recherche d&#x27;une entreprise pour effectuer mon stage et avancer un projet opérationnel.
 					            </p>
 					        </div>
 					
@@ -438,7 +478,7 @@ ul {
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">02/2024</span>
-					                        <span class="endDate"> - 12/2024</span>
+					                        <span class="endDate"> – 12/2024</span>
 					                </h5>
 					            </div>
 					            <h4>Bac+4 Concepteur Développeur d'Applications</h4>
@@ -460,7 +500,7 @@ application web organisée en couches.</li>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">12/2022</span>
-					                        <span class="endDate"> - 03/2023</span>
+					                        <span class="endDate"> – 03/2023</span>
 					                </h5>
 					            </div>
 					            <h4>POEC Développeur Java</h4>
@@ -476,7 +516,7 @@ application web organisée en couches.</li>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">09/2010</span>
-					                        <span class="endDate"> - 06/2011</span>
+					                        <span class="endDate"> – 06/2011</span>
 					                </h5>
 					            </div>
 					            <h4>BTS Informatique de Gestion, option ARLE</h4>
@@ -486,13 +526,13 @@ application web organisée en couches.</li>
 					        <section class="item">
 					            <div class="section-header clearfix">
 					                <h3 class="pull-left colored">
-					                        <a href="http://www.lyceecoetlogon.fr/" target="_blank">
+					                        <a href="https://lycee-coetlogon.ac-rennes.fr/" target="_blank">
 					                            L.P. Coëtlogon <i class="fa fa-external-link" aria-hidden="true"></i>
 					                        </a>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">09/2007</span>
-					                        <span class="endDate"> - 06/2008</span>
+					                        <span class="endDate"> – 06/2008</span>
 					                </h5>
 					            </div>
 					            <h4>Bac Pro MRIM</h4>
@@ -514,7 +554,7 @@ application web organisée en couches.</li>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">01/2020</span>
-					                        <span class="endDate"> - 02/2021</span>
+					                        <span class="endDate"> – 02/2021</span>
 					                </h5>
 					            </div>
 					            <h4>Administrateur Systèmes et Réseaux</h4>
@@ -524,8 +564,8 @@ application web organisée en couches.</li>
 					            <ul>
 					                <li>Intégrer, préparer et mettre en service les équipements.</li>
 					                <li>Surveiller à distance le parc d’équipements et réaliser le support niveau 2.</li>
-					                <li>Élaborer un plan d&#x27;implantation réseau selon les besoins de l’établissement.</li>
-					                <li>Participer aux projets de mise en oeuvre de nouvelles solutions et les évaluer.</li>
+					                <li>Élaborer un plan d'implantation réseau selon les besoins de l’établissement.</li>
+					                <li>Participer aux projets de mise en œuvre de nouvelles solutions et les évaluer.</li>
 					                <li>Administrer les serveurs.</li>
 					            </ul>
 					        </section>
@@ -538,7 +578,7 @@ application web organisée en couches.</li>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">07/2018</span>
-					                        <span class="endDate"> - 08/2019</span>
+					                        <span class="endDate"> – 08/2019</span>
 					                </h5>
 					            </div>
 					            <h4>Technicien Réseaux et Télécoms</h4>
@@ -558,7 +598,7 @@ application web organisée en couches.</li>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">08/2015</span>
-					                        <span class="endDate"> - 08/2016</span>
+					                        <span class="endDate"> – 08/2016</span>
 					                </h5>
 					            </div>
 					            <h4>Technicien Assistance Utilisateurs</h4>
@@ -569,7 +609,16 @@ application web organisée en couches.</li>
 					                <li>Helpdesk : conseil et support à l’utilisateur, maintenance, déploiement de matériel et logiciels.</li>
 					                <li>Patch Management : contrôler les mises à jour de sécurité et fonctionnelles, gérer leur déploiement sur le parc.</li>
 					            </ul>
-					        </section>
+					        </section>                <section class="item">
+						<div class="section-header clearfix">
+							<h3 class="pull-left colored">Divers Intérim
+							</h3>
+							<h5 class="italic pull-right">
+								<span class="startDate">01/2012</span>
+								<span class="endDate"> ~ 04/2015</span>
+							</h5>
+						</div>
+					</section>
 					        <section class="item">
 					            <div class="section-header clearfix">
 					                <h3 class="pull-left colored">
@@ -579,7 +628,7 @@ application web organisée en couches.</li>
 					                </h3>
 					                <h5 class="italic pull-right">
 					                        <span class="startDate">09/2009</span>
-					                        <span class="endDate"> - 08/2010</span>
+					                        <span class="endDate"> – 08/2010</span>
 					                </h5>
 					            </div>
 					            <h4>Technicien Systèmes et Réseaux</h4>
