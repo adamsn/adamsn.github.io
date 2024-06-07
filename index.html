@@ -9,410 +9,411 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <style>
-      /* Utils */
-      /*----- Colors -----*/
-      /*----- Fonts -----*/
-      /*----- Dimensions and sizes -----*/
-      /* Base */
-      @font-face {
-          font-family: 'Josefin Sans';
-          font-style: normal;
-          font-weight: 300;
-          src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04zwV_pQ1T3xN3K1c3sB361us.ttf) format('truetype');
-      }
+    /* Utils */
+    /*----- Colors -----*/
+    /*----- Fonts -----*/
+    /*----- Dimensions and sizes -----*/
+    /* Base */
+    @font-face {
+      font-family: 'Josefin Sans';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Josefin Sans Light'), local('JosefinSans-Light'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04zwV_pQ1T3xN3K1c3sB361us.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Josefin Sans';
-          font-style: normal;
-          font-weight: 700;
-          src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04z306qf9KHRHwsVx7iw5MXmY.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Josefin Sans';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Josefin Sans Bold'), local('JosefinSans-Bold'), url(https://fonts.gstatic.com/s/josefinsans/v9/C6HYlRF50SGJq1XyXj04z306qf9KHRHwsVx7iw5MXmY.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Lato';
-          font-style: normal;
-          font-weight: 300;
-          src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v11/nj47mAZe0mYUIySgfn0wpQ.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Lato';
-          font-style: normal;
-          font-weight: 400;
-          src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/v0SdcGFAl2aezM9Vq_aFTQ.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Lato';
-          font-style: normal;
-          font-weight: 700;
-          src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/DvlFBScY1r-FMtZSYIYoYw.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Lato';
-          font-style: italic;
-          font-weight: 300;
-          src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v11/2HG_tEPiQ4Z6795cGfdivKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 300;
+      src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v11/2HG_tEPiQ4Z6795cGfdivKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Lato';
-          font-style: italic;
-          font-weight: 400;
-          src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/LqowQDslGv4DmUBAfWa2Vw.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 400;
+      src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/LqowQDslGv4DmUBAfWa2Vw.ttf) format('truetype');
+    }
 
-      @font-face {
-          font-family: 'Lato';
-          font-style: italic;
-          font-weight: 700;
-          src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
-      }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 700;
+      src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYEKCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+    }
 
+    body {
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      background: #f8f8f8;
+      margin: 50px 0 100px;
+      letter-spacing: .3px;
+      color: #39424B;
+    }
+
+    header h4 {
+      margin-right: -8px;
+      font-weight: 400;
+      color: #56817A
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: .5px;
+    }
+
+    h3 {
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: .4px;
+    }
+
+    h3.bold {
+      font-weight: 700;
+    }
+
+    h3.colored {
+      font-weight: 500;
+      color: #56817A
+    }
+
+    h4 {
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+    }
+
+    h4.bold {
+      font-weight: 700;
+    }
+
+    h5 {
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+    }
+
+    h5.italic {
+      font-style: italic;
+    }
+
+    h6 {
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    a:hover {
+      color: #2895F1;
+    }
+
+    .fa-up-right-from-square {
+      font-size: 8px;
+      vertical-align: text-top;
+    }
+
+    p,
+    li {
+      font-size: 11px;
+      text-align: justify;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+    }
+
+    blockquote {
+      font-size: 11px;
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      margin: 10px 25px;
+    }
+
+    em {
+      opacity: .6;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      list-style: none;
+      -webkit-padding-start: 25px
+    }
+
+    ul.minimal {
+      padding: 0
+    }
+
+    ul.minimal li {
+      display: flex;
+      margin-bottom: 3px;
+    }
+
+    ul.two-column {
+      -webkit-column-count: 2;
+      -webkit-column-gap: 28px;
+      -moz-column-count: 2;
+      column-count: 2;
+      -moz-column-gap: 28px;
+      column-gap: 28px
+    }
+
+    ul.two-column li {
+      padding-left: 0
+    }
+
+    ul:not(.minimal) li {
+      margin-left: -16px;
+    }
+
+    ul:not(.minimal) li:before {
+      position: absolute;
+      font-family: 'FontAwesome', emoji;
+      content: '\f054';
+      margin: 1px 5px 0 -15px;
+      color: #56817A
+    }
+
+    @page {
+      size: A4;
+    }
+
+    .container {
+      padding-top: 20px;
+    }
+
+    .keyline {
+      width: 45px;
+      margin: 8px 0 10px;
+      border-top: 1px solid #56817A;
+    }
+
+    .pull-left {
+      float: left;
+    }
+
+    .pull-right {
+      float: right;
+    }
+
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .profile-pic {
+      margin-top: -4px;
+      margin-right: 16px;
+      margin-bottom: -28px;
+    }
+
+    .profile-pic img {
+      height: 84px;
+      width: 84px;
+      border-radius: 50%;
+      border: 2px solid #56817A;
+    }
+
+    .summary {
+      margin: 5px 0 5px;
+    }
+
+    /* Layouts */
+    .page {
+      background: white;
+      width: 612px;
+      min-height: 792px;
+      display: block;
+      margin: 0 auto;
+      border-top: 10px solid #56817A;
+      padding: 36px 22px 30px 22px;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    .page:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .left-column {
+      float: left;
+      width: 160px;
+      margin-right: 20px;
+      word-wrap: break-word;
+    }
+
+    .right-column {
+      width: auto;
+      overflow: hidden;
+    }
+
+    .item {
+      margin-bottom: 15px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .header {
+      position: relative;
+      width: 612px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: -3px;
+      padding: 8px 22px 30px 0;
+      z-index: 1;
+
+    }
+
+    .btn {
+      font-family: "Lato", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      background: #e48954;
+      color: rgba(255, 255, 255, .8);
+      padding: 8px 8px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      top: 7px;
+    }
+
+    .btn:hover {
+      background: rgba(86, 129, 122, 0.3);
+      color: #e48954;
+      box-shadow: 0 1px 10px rgba(222, 158, 91, 0.2);
+    }
+
+    .row {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media print {
       body {
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 400;
-          background: #f8f8f8;
-          margin: 50px 0 100px;
-          letter-spacing: .3px;
-          color: #39424B;
+        margin: 0;
       }
 
-      header h4 {
-          margin-right: -8px;
-          font-weight: 400;
-          color: #56817A
+      .page {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 36px 0 30px;
+        box-shadow: none;
       }
 
-      h1, h2, h3, h4, h5, h6 {
-          text-transform: uppercase;
-          margin: 0;
-      }
-
-      h1 {
-          font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-          font-weight: 300;
-          font-size: 22px;
-          letter-spacing: 0;
-      }
-
-      h2 {
-          font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
-          font-weight: 700;
-          font-size: 16px;
-          letter-spacing: .5px;
-      }
-
-      h3 {
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 300;
-          font-size: 14px;
-          letter-spacing: .4px;
-      }
-
-      h3.bold {
-          font-weight: 700;
-      }
-
-      h3.colored {
-          font-weight: 500;
-          color: #56817A
-      }
-
-      h4 {
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 300;
-          font-size: 12px;
-      }
-
-      h4.bold {
-          font-weight: 700;
-      }
-
-      h5 {
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 300;
-          font-size: 11px;
-      }
-
-      h5.italic {
-          font-style: italic;
-      }
-
-      h6 {
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 400;
-          font-size: 10px;
-      }
-
-      a {
-          color: inherit;
-          text-decoration: inherit;
-      }
-
-      a:hover {
-          color: #2895F1;
-      }
-
-      .fa-up-right-from-square {
-          font-size: 8px;
-          vertical-align: text-top;
-      }
-
-      p,
-      li {
-          font-size: 11px;
-          text-align: justify;
-          -webkit-hyphens: auto;
-          -moz-hyphens: auto;
-          -ms-hyphens: auto;
-          hyphens: auto;
-      }
-
-      blockquote {
-          font-size: 11px;
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 400;
-          font-style: italic;
-          margin: 10px 25px;
-      }
-
-      em {
-          opacity: .6;
-      }
-
-      ul {
-          margin: 10px 0 0;
-          list-style: none;
-          -webkit-padding-start: 25px
-      }
-
-      ul.minimal {
-          padding: 0
-      }
-
-      ul.minimal li {
-          margin-bottom: 3px
-      }
-
-      ul.two-column {
-          -webkit-column-count: 2;
-          -webkit-column-gap: 28px;
-          -moz-column-count: 2;
-          column-count: 2;
-          -moz-column-gap: 28px;
-          column-gap: 28px
-      }
-
-      ul.two-column li {
-          padding-left: 0
-      }
-
-      ul:not(.minimal) li {
-          margin-left: -16px;
-      }
-
-      ul:not(.minimal) li:before {
-          position: absolute;
-          font-family: 'FontAwesome', emoji;
-          content: '\f054';
-          margin: 1px 5px 0 -15px;
-          color: #56817A
-      }
-
-      @page {
-          size: A4;
+      .page .resume-header,
+      .page .resume-content {
+        padding: 0 22px 0 22px;
       }
 
       .container {
-          padding-top: 20px;
+        page-break-inside: avoid;
       }
 
-      .keyline {
-          width: 45px;
-          margin: 8px 0 10px;
-          border-top: 1px solid #56817A;
+      .work-container .item {
+        page-break-inside: avoid;
       }
 
-      .pull-left {
-          float: left;
+      .fa-up-right-from-square, .header {
+        display: none;
       }
+    }
 
-      .pull-right {
-          float: right;
-      }
+    /* Components */
+    .info-tag-container {
+      margin-bottom: 5px;
+    }
 
-      .clearfix:after {
-          content: "";
-          display: table;
-          clear: both;
-      }
+    .info-tag-container .fa {
+      font-size: 14px;
+      width: 12px;
+      margin-right: 5px;
+      text-align: center;
+      vertical-align: middle;
+    }
 
-      .profile-pic {
-          margin-top: -4px;
-          margin-right: 16px;
-          margin-bottom: -28px;
-      }
+    .info-tag-container .fa-location-dot {
+      font-size: 16px;
+    }
 
-      .profile-pic img {
-          height: 84px;
-          width: 84px;
-          border-radius: 50%;
-          border: 2px solid #56817A;
-      }
+    .info-tag-container .fa-envelope {
+      font-size: 12px;
+    }
 
-      .summary {
-          margin: 5px 0 5px;
-      }
+    .info-tag-container .fa-up-right-from-square {
+      font-size: 6px;
+    }
 
-      /* Layouts */
-      .page {
-          background: white;
-          width: 612px;
-          min-height: 792px;
-          display: block;
-          margin: 0 auto;
-          border-top: 10px solid #56817A;
-          padding: 36px 22px 30px 22px;
-          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-          z-index: 2;
-      }
+    .info-tag-container .info-text {
+      font-size: 9px;
+      display: inline-block;
+      vertical-align: middle;
+      width: 139px;
+    }
 
-      .page:after {
-          content: "";
-          display: table;
-          clear: both;
-      }
+    .references-container .fa {
+      font-size: 14px;
+    }
 
-      .left-column {
-          float: left;
-          width: 160px;
-          margin-right: 20px;
-          word-wrap: break-word;
-      }
-
-      .right-column {
-          width: auto;
-          overflow: hidden;
-      }
-
-      .item {
-          margin-bottom: 15px;
-      }
-
-      .item:last-child {
-          margin-bottom: 0;
-      }
-
-      .header {
-          position: relative;
-          width: 612px;
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: -3px;
-          padding: 8px 22px 30px 0;
-          z-index: 1;
-
-      }
-
-      .btn {
-          font-family: "Lato", Helvetica, Arial, sans-serif;
-          font-weight: 400;
-          font-size: 10px;
-          background: #e48954;
-          color: rgba(255, 255, 255, .8);
-          padding: 8px 8px;
-          text-transform: uppercase;
-          cursor: pointer;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-          position: absolute;
-          top: 7px;
-      }
-
-      .btn:hover {
-          background: rgba(86, 129, 122, 0.3);
-          color: #e48954;
-          box-shadow: 0 1px 10px rgba(222, 158, 91, 0.2);
-      }
-
-      .row {
-          position: relative;
-          z-index: 2;
-      }
-
-      @media print {
-          body {
-              margin: 0;
-          }
-
-          .page {
-              width: 100%;
-              height: 100%;
-              margin: 0;
-              padding: 36px 0 30px;
-              box-shadow: none;
-          }
-
-          .page .resume-header,
-          .page .resume-content {
-              padding: 0 22px 0 22px;
-          }
-
-          .container {
-              page-break-inside: avoid;
-          }
-
-          .work-container .item {
-              page-break-inside: avoid;
-          }
-
-          .fa-up-right-from-square, .header {
-              display: none;
-          }
-      }
-
-      /* Components */
-      .info-tag-container {
-          margin-bottom: 5px;
-      }
-
-      .info-tag-container .fa {
-          font-size: 14px;
-          width: 12px;
-          margin-right: 5px;
-          text-align: center;
-          vertical-align: middle;
-      }
-
-      .info-tag-container .fa-location-dot {
-          font-size: 16px;
-      }
-
-      .info-tag-container .fa-envelope {
-          font-size: 12px;
-      }
-
-      .info-tag-container .fa-up-right-from-square {
-          font-size: 6px;
-      }
-
-      .info-tag-container .info-text {
-          font-size: 9px;
-          display: inline-block;
-          vertical-align: middle;
-          width: 139px;
-      }
-
-      .references-container .fa {
-          font-size: 14px;
-      }
-
-      .bullet::before {
-          content: "•";
-          color: #56817A;
-      }
+    .bullet::before {
+      content: "•";
+      color: #56817A;
+    }
 
   </style>
 </head>
@@ -477,18 +478,17 @@
                 <div class="keyline"></div>
               </div>
               <ul class="minimal">
-                <li><h6>Java <span class="bullet"></span> Spring</h6></li>
-                <li><h6>Python</h6></li>
-                <li><h6>JavaScript <span class="bullet"></span> Angular</h6></li>
-                <li><h6>SQL</h6></li>
-                <li><h6>Dart <span class="bullet"></span> Flutter</h6></li>
-                <li><h6>PHP <span class="bullet"></span> Symfony</h6></li>
-                <li><h6>HTML/CSS</h6></li>
+                <li><h6>Java<span class="bullet"></span>Spring<span class="bullet"></span>MSSQL</h6></li>
+                <li><h6>Python<span class="bullet"></span>Django</h6></li>
+                <li><h6>Go<span class="bullet"></span>Gin<span class="bullet"></span>Postgres</h6></li>
+                <li><h6>JS<span class="bullet"></span>Angular<span class="bullet"></span>MongoDB</h6></li>
+                <li><h6>Dart<span class="bullet"></span>Flutter<span class="bullet"></span>SQLite</h6></li>
+                <li><h6>PHP<span class="bullet"></span>Symfony<span class="bullet"></span>MySQL</h6></li>
               </ul>
             </section>
             <section class="container">
               <div class="title">
-                <h3>Déploiement</h3>
+                <h3>DevOps</h3>
                 <div class="keyline"></div>
               </div>
               <ul class="minimal">
@@ -499,10 +499,11 @@
             </section>
             <section class="container">
               <div class="title">
-                <h3>Méthodes</h3>
+                <h3>Projet</h3>
                 <div class="keyline"></div>
               </div>
               <ul class="minimal">
+                <li><h6>Git</h6></li>
                 <li><h6>Agile</h6></li>
                 <li><h6>UML</h6></li>
               </ul>
@@ -516,12 +517,11 @@
                 <li><h6>Linux</h6></li>
                 <li><h6>Windows</h6></li>
                 <li><h6>Android</h6></li>
-                <li><h6>Active Directory</h6></li>
               </ul>
             </section>
             <section class="container">
               <div class="title">
-                <h3>Domaines IT</h3>
+                <h3>IT Ops</h3>
                 <div class="keyline"></div>
               </div>
               <ul class="minimal">
