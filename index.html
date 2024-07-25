@@ -212,6 +212,7 @@
 
     ul:not(.minimal) li {
       margin-left: -16px;
+      line-height: 1.4;
     }
 
     ul:not(.minimal) li:before {
@@ -265,6 +266,7 @@
 
     .summary {
       margin: 5px 0 5px;
+      line-height: 1.4;
     }
 
     /* Layouts */
@@ -350,7 +352,7 @@
 
       .page {
         width: 100%;
-        height: 100%;
+        height: auto;
         margin: 0;
         padding: 36px 0 30px;
         box-shadow: none;
@@ -415,6 +417,19 @@
       color: #56817A;
     }
 
+    .flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flex .container {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .flex .container:last-child {
+      margin-right: 0;
+    }
   </style>
 </head>
 <body>
@@ -480,12 +495,37 @@
               <ul class="minimal">
                 <li><h6>Java<span class="bullet"></span>Spring<span class="bullet"></span>MSSQL</h6></li>
                 <li><h6>Python<span class="bullet"></span>Django</h6></li>
-                <li><h6>Go<span class="bullet"></span>Gin<span class="bullet"></span>Postgres</h6></li>
+                <li><h6>Go<span class="bullet"></span>Gin<span class="bullet"></span>PostgreSQL</h6></li>
                 <li><h6>JS<span class="bullet"></span>Angular<span class="bullet"></span>MongoDB</h6></li>
                 <li><h6>Dart<span class="bullet"></span>Flutter<span class="bullet"></span>SQLite</h6></li>
                 <li><h6>PHP<span class="bullet"></span>Symfony<span class="bullet"></span>MySQL</h6></li>
+                <li><h6>Kotlin<span class="bullet"></span>JP Compose</h6></li>
               </ul>
             </section>
+            <div class="flex">
+              <section class="container">
+                <div class="title">
+                  <h3>Projet</h3>
+                  <div class="keyline"></div>
+                </div>
+                <ul class="minimal">
+                  <li><h6>Git</h6></li>
+                  <li><h6>Agile</h6></li>
+                  <li><h6>UML</h6></li>
+                </ul>
+              </section>
+              <section class="container">
+                <div class="title">
+                  <h3>IDE</h3>
+                  <div class="keyline"></div>
+                </div>
+                <ul class="minimal">
+                  <li><h6>JetBrains</h6></li>
+                  <li><h6>VS Code</h6></li>
+                  <li><h6>Eclipse</h6></li>
+                </ul>
+              </section>
+            </div>
             <section class="container">
               <div class="title">
                 <h3>DevOps</h3>
@@ -495,17 +535,6 @@
                 <li><h6>Docker</h6></li>
                 <li><h6>Ansible</h6></li>
                 <li><h6>Virtualisation</h6></li>
-              </ul>
-            </section>
-            <section class="container">
-              <div class="title">
-                <h3>Projet</h3>
-                <div class="keyline"></div>
-              </div>
-              <ul class="minimal">
-                <li><h6>Git</h6></li>
-                <li><h6>Agile</h6></li>
-                <li><h6>UML</h6></li>
               </ul>
             </section>
             <section class="container">
@@ -587,8 +616,9 @@
             <div class="keyline"></div>
           </div>
           <p class="summary">
-            Actuellement en formation au titre de Concepteur Développeur d'Applications, à la recherche d&#x27;une
-            entreprise pour effectuer mon stage et avancer un projet opérationnel.
+            Après une expérience enrichissante dans les opérations systèmes et réseaux, je me suis réorienté vers la
+            programmation. En formation de Concepteur Développeur d'Applications, je suis à la recherche d'une
+            opportunité de stage pour concrétiser cette transition et contribuer à un projet opérationnel.
           </p>
         </div>
 
@@ -694,11 +724,9 @@
             <p class="summary">Solutions d’accès internet public pour commerces.</p>
 
             <ul>
-              <li>Intégrer, préparer et mettre en service les équipements.</li>
-              <li>Surveiller à distance le parc d’équipements et réaliser le support niveau 2.</li>
-              <li>Élaborer un plan d'implantation réseau selon les besoins de l’établissement.</li>
-              <li>Participer aux projets de mise en œuvre de nouvelles solutions et les évaluer.</li>
-              <li>Administrer les serveurs.</li>
+              <li>Intégrer, préparer et mettre en service les équipements d'accès internet public.</li>
+              <li>Surveiller à distance le parc d'équipements et réaliser le support niveau 2.</li>
+              <li>Élaborer des plans d'implantation réseau et administrer les serveurs.</li>
             </ul>
           </section>
           <section class="item">
@@ -718,9 +746,8 @@
             <p class="summary">Prestation de services informatiques pour Orange Business Services.</p>
 
             <ul>
-              <li>Piloter les étapes de création, modification et résiliation de l’équipement réseau (data et
-                voix) et réaliser sa configuration, selon la commande commerciale du client final.
-              </li>
+              <li>Piloter le cycle de vie des équipements réseau (data et voix).</li>
+              <li>Réaliser des commandes clients.</li>
             </ul>
           </section>
           <section class="item">
@@ -740,12 +767,8 @@
             <p class="summary">Prestation de services informatiques pour le groupe Virbac.</p>
 
             <ul>
-              <li>Helpdesk : conseil et support à l’utilisateur, maintenance, déploiement de matériel et
-                logiciels.
-              </li>
-              <li>Patch Management : contrôler les mises à jour de sécurité et fonctionnelles, gérer leur
-                déploiement sur le parc.
-              </li>
+              <li>Helpdesk : support, maintenance, déploiement de matériel et logiciels.</li>
+              <li>Patch Management : contrôler et déployer des mises à jour sur le parc.</li>
             </ul>
           </section>
           <section class="item">
@@ -775,12 +798,9 @@
             <p class="summary">Services informatiques pour petites entreprises et particuliers</p>
 
             <ul>
-              <li>Intégrer, préparer, mettre en service les nouveaux équipements et réaliser le support niveau
-                2.
+              <li>Intégrer et maintenir les équipements et assurer le support.
               </li>
-              <li>Proposer et maintenir des solutions de réseau, stockage et virtualisation.</li>
-              <li>Gérer les sauvegardes de données.</li>
-              <li>Rédiger la documentation.</li>
+              <li>Proposer et gérer des solutions de réseau, stockage, virtualisation et sauvegarde.</li>
             </ul>
           </section>
         </div>
