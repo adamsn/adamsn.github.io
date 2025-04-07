@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'index.html'
+  workflow_dispatch: # Added this line to enable manual triggering
 
 jobs:
   build:
@@ -38,18 +39,18 @@ jobs:
 
         (async () => {
           console.log('Starting PDF generation process...');
-          
+
           const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox']
           });
           console.log('Browser launched successfully');
-          
+
           const page = await browser.newPage();
           console.log('New page created');
 
           const htmlPath = path.join(process.cwd(), 'index.html');
           console.log(`Loading HTML from: ${htmlPath}`);
-          
+
           await page.goto(`file://${htmlPath}`, {
             waitUntil: 'networkidle2'
           });
@@ -68,7 +69,7 @@ jobs:
 
           const pdfPath = path.join(outputDir, 'pdf.pdf');
           console.log(`Generating PDF at: ${pdfPath}`);
-          
+
           await page.pdf({
             path: pdfPath,
             format: 'A4',
@@ -104,7 +105,7 @@ jobs:
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'github-actions@github.com'
-        
+
         # Check if PDF exists and has content
         if [ -f docs/pdf.pdf ]; then
           file_size=$(stat -c%s "docs/pdf.pdf")
@@ -117,12 +118,12 @@ jobs:
           echo "Error: PDF file not found!"
           exit 1
         fi
-        
+
         # Force add the PDF file
         git add -f docs/pdf.pdf
-        
+
         # Force a commit even if git thinks there are no changes
         git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
-        
+
         # Push changes to the repository
         git push
