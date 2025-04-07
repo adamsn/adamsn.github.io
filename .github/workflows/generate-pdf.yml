@@ -46,6 +46,17 @@ jobs:
           const page = await browser.newPage();
           console.log('New page created');
 
+          // Emulate screen media instead of print to keep all elements visible
+          await page.emulateMediaType('screen');
+          console.log('Emulating screen media type');
+
+          // Set viewport with wider width to ensure left sidebar is captured
+          await page.setViewport({
+            width: 1240,
+            height: 1754,  // A4 height at 96 DPI
+            deviceScaleFactor: 1.5,  // Higher resolution
+          });
+
           const htmlPath = path.join(process.cwd(), 'index.html');
           console.log(`Loading HTML from: ${htmlPath}`);
 
@@ -54,9 +65,9 @@ jobs:
           });
           console.log('Page loaded, waiting for resources...');
 
-          // Use standard setTimeout instead of page.waitForTimeout
-          await new Promise(resolve => setTimeout(resolve, 5000));
-          console.log('Waited 5 seconds for resources to load');
+          // Increase wait time for resources to fully load
+          await new Promise(resolve => setTimeout(resolve, 10000));
+          console.log('Waited 10 seconds for resources to load');
 
           // Ensure the output directory exists
           const outputDir = path.join(process.cwd(), 'docs');
@@ -68,17 +79,26 @@ jobs:
           const pdfPath = path.join(outputDir, 'pdf.pdf');
           console.log(`Generating PDF at: ${pdfPath}`);
 
+          // Calculate optimal width based on the page content
+          const { width } = await page.evaluate(() => {
+            const resume = document.getElementById('resume');
+            return {
+              width: resume.offsetWidth
+            };
+          });
+          console.log(`Detected resume width: ${width}px`);
+
           await page.pdf({
             path: pdfPath,
             format: 'A4',
             printBackground: true,
-            scale: 0.97,
-            pageRanges: '1',
+            scale: 0.92,  // Adjust scale to fit the page
+            preferCSSPageSize: false,
             margin: {
-              top: '0px',
-              right: '0px',
-              bottom: '0px',
-              left: '0px'
+              top: '10px',
+              right: '10px',
+              bottom: '10px',
+              left: '10px'
             }
           });
 
