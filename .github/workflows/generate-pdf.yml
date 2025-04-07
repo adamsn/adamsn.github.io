@@ -110,13 +110,7 @@ jobs:
               path: pdfPath,
               pageRanges: '1-1',
               format: 'A4',
-              printBackground: true,
-              margin: {
-                top: '0mm',
-                right: '0mm',
-                bottom: '0mm',
-                left: '0mm'
-              }
+              printBackground: true
             });
           
             await browser.close();
