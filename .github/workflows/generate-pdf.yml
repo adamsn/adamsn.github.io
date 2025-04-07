@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - `index.html`
+      - 'index.html'
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: `18`
+          node-version: '18'
 
       - name: Install dependencies
         run: |
@@ -30,57 +30,55 @@ jobs:
 
       - name: Generate PDF
         run: |
-          cat > `generate-pdf.js` << 'EOL'
-          const puppeteer = require(`puppeteer`);
-          const path = require(`path`);
-          const fs = require(`fs`);
+          cat > generate-pdf.js << 'EOL'
+          const puppeteer = require('puppeteer');
+          const path = require('path');
+          const fs = require('fs');
 
           (async () => {
-            console.log(`Starting PDF generation process...`);
+            console.log('Starting PDF generation process...');
+
             const browser = await puppeteer.launch({
-              args: [`--no-sandbox`, `--disable-setuid-sandbox`]
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
             });
-            console.log(`Browser launched successfully`);
-
+            
             const page = await browser.newPage();
-            console.log(`New page created`);
-            await page.emulateMediaType(`print`);
+            
+            // Use print media type to apply print-specific CSS
+            await page.emulateMediaType('print');
 
-            const htmlPath = path.join(process.cwd(), `index.html`);
-            console.log(`Loading HTML from: ${htmlPath}`);
-
+            const htmlPath = path.join(process.cwd(), 'index.html');
+            
             await page.goto(`file://${htmlPath}`, {
-              waitUntil: `networkidle0`
+              waitUntil: 'networkidle0'
             });
-            console.log(`Page loaded, waiting for resources...`);
 
-            const outputDir = path.join(process.cwd(), `docs`);
+            // Ensure the output directory exists
+            const outputDir = path.join(process.cwd(), 'docs');
             if (!fs.existsSync(outputDir)) {
               fs.mkdirSync(outputDir, { recursive: true });
             }
 
-            const pdfPath = path.join(outputDir, `pdf.pdf`);
-            console.log(`Generating PDF at: ${pdfPath}`);
-
+            const pdfPath = path.join(outputDir, 'pdf.pdf');
+            
             await page.pdf({
               path: pdfPath,
-              pageRanges: `1-1`,
-              format: `A4`,
+              format: 'A4',
               printBackground: true
             });
 
             await browser.close();
-            console.log(`Browser closed`);
+            console.log('PDF generated successfully');
           })();
           EOL
 
           mkdir -p docs
-          node `generate-pdf.js`
+          node generate-pdf.js
 
       - name: Commit and push PDF
         run: |
-          git config --global user.name `GitHub Actions`
-          git config --global user.email `github-actions@github.com`
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
           git add -f docs/pdf.pdf
           git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
           git push
