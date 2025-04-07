@@ -63,9 +63,8 @@ jobs:
             
             await page.pdf({
               path: pdfPath,
-              format: 'A4',
               printBackground: true,
-              displayHeaderFooter: false
+              height: height + 'px'
             });
 
             await browser.close();
