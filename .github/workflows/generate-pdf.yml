@@ -46,6 +46,8 @@ jobs:
             
             // Use print media type to apply print-specific CSS
             await page.emulateMediaType('print');
+          
+            let height = await page.evaluate(() => document.documentElement.offsetHeight);
 
             const htmlPath = path.join(process.cwd(), 'index.html');
             
