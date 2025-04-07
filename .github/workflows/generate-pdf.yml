@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'index.html'
-  workflow_dispatch: # Enables manual triggering
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18' # Updated to Node.js 18
+        node-version: '18'
 
     - name: Install dependencies
       run: |
@@ -54,8 +54,8 @@ jobs:
           });
           console.log('Page loaded, waiting for resources...');
 
-          // Increased wait time for external resources
-          await page.waitForTimeout(5000);
+          // Use standard setTimeout instead of page.waitForTimeout
+          await new Promise(resolve => setTimeout(resolve, 5000));
           console.log('Waited 5 seconds for resources to load');
 
           // Ensure the output directory exists
