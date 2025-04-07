@@ -1,0 +1,70 @@
+name: Generate PDF Resume
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'index.html'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: |
+        npm init -y
+        npm install puppeteer
+
+    - name: Generate PDF
+      run: |
+        cat > generate-pdf.js << 'EOL'
+        const puppeteer = require('puppeteer');
+        const path = require('path');
+
+        (async () => {
+          const browser = await puppeteer.launch();
+          const page = await browser.newPage();
+
+          await page.goto(`file://${path.join(process.cwd(), 'index.html')}`, {
+            waitUntil: 'networkidle2'
+          });
+          
+          // Additional wait time to ensure all fonts and external resources are fully loaded
+          await page.waitForTimeout(1000);
+
+          await page.pdf({
+            path: 'docs/pdf.pdf',
+            format: 'A4',
+            printBackground: true,
+            scale: 0.97,
+            pageRanges: '1',
+            margin: {
+              top: '0px',
+              right: '0px',
+              bottom: '0px',
+              left: '0px'
+            }
+          });
+
+          await browser.close();
+          console.log('PDF generated successfully!');
+        })();
+        EOL
+
+        mkdir -p docs
+        node generate-pdf.js
+
+    - name: Commit and push PDF
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions@github.com'
+        git add docs/pdf.pdf
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update generated PDF resume"
+        git push
