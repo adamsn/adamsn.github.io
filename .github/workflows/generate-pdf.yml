@@ -9,8 +9,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Add explicit permissions
+    permissions:
+      contents: write
+
     steps:
     - uses: actions/checkout@v3
+      with:
+        # Full git history to ensure proper diffs
+        fetch-depth: 0
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -27,22 +34,43 @@ jobs:
         cat > generate-pdf.js << 'EOL'
         const puppeteer = require('puppeteer');
         const path = require('path');
+        const fs = require('fs');
 
         (async () => {
+          console.log('Starting PDF generation process...');
+          
           const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox']
           });
+          console.log('Browser launched successfully');
+          
           const page = await browser.newPage();
+          console.log('New page created');
 
-          await page.goto(`file://${path.join(process.cwd(), 'index.html')}`, {
+          const htmlPath = path.join(process.cwd(), 'index.html');
+          console.log(`Loading HTML from: ${htmlPath}`);
+          
+          await page.goto(`file://${htmlPath}`, {
             waitUntil: 'networkidle2'
           });
-          
-          // Additional wait time to ensure all fonts and external resources are fully loaded
-          await page.waitForTimeout(1000);
+          console.log('Page loaded, waiting for resources...');
 
+          // Increased wait time for external resources (fonts, CSS)
+          await page.waitForTimeout(5000);
+          console.log('Waited 5 seconds for resources to load');
+
+          // Ensure the output directory exists
+          const outputDir = path.join(process.cwd(), 'docs');
+          if (!fs.existsSync(outputDir)) {
+            fs.mkdirSync(outputDir, { recursive: true });
+            console.log('Created output directory');
+          }
+
+          const pdfPath = path.join(outputDir, 'pdf.pdf');
+          console.log(`Generating PDF at: ${pdfPath}`);
+          
           await page.pdf({
-            path: 'docs/pdf.pdf',
+            path: pdfPath,
             format: 'A4',
             printBackground: true,
             scale: 0.97,
@@ -55,8 +83,17 @@ jobs:
             }
           });
 
+          // Check if PDF was created successfully
+          if (fs.existsSync(pdfPath)) {
+            const stats = fs.statSync(pdfPath);
+            console.log(`PDF created successfully! Size: ${stats.size} bytes`);
+          } else {
+            console.error('PDF file was not created!');
+            process.exit(1);
+          }
+
           await browser.close();
-          console.log('PDF generated successfully!');
+          console.log('Browser closed');
         })();
         EOL
 
@@ -67,6 +104,25 @@ jobs:
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'github-actions@github.com'
-        git add docs/pdf.pdf
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update generated PDF resume"
+        
+        # Check if PDF exists and has content
+        if [ -f docs/pdf.pdf ]; then
+          file_size=$(stat -c%s "docs/pdf.pdf")
+          echo "PDF size: $file_size bytes"
+          if [ "$file_size" -eq 0 ]; then
+            echo "Error: PDF file is empty!"
+            exit 1
+          fi
+        else
+          echo "Error: PDF file not found!"
+          exit 1
+        fi
+        
+        # Force add the PDF file
+        git add -f docs/pdf.pdf
+        
+        # Force a commit even if git thinks there are no changes
+        git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
+        
+        # Push changes to the repository
         git push
