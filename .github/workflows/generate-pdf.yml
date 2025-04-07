@@ -37,49 +37,63 @@ jobs:
 
         (async () => {
           console.log('Starting PDF generation process...');
-          
+
           const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox']
           });
           console.log('Browser launched successfully');
-          
+
           const page = await browser.newPage();
           console.log('New page created');
-          
+
           // Use print media type to apply print-specific CSS
           await page.emulateMediaType('print');
-          
+
           const htmlPath = path.join(process.cwd(), 'index.html');
           console.log(`Loading HTML from: ${htmlPath}`);
-          
+
           await page.goto(`file://${htmlPath}`, {
-            waitUntil: 'networkidle2'
+            waitUntil: 'networkidle0'
           });
           console.log('Page loaded, waiting for resources...');
-          
-          // Simple timeout
-          await new Promise(resolve => setTimeout(resolve, 2000));
-          
+
+          // Use JavaScript to ensure certain elements are hidden
+          await page.evaluate(() => {
+            // Force hide download button and header
+            const header = document.querySelector('.row.header');
+            if (header) header.style.display = 'none';
+            
+            // Force hide link icons
+            const linkIcons = document.querySelectorAll('.fa-up-right-from-square');
+            linkIcons.forEach(icon => icon.style.display = 'none');
+          });
+
           // Ensure the output directory exists
           const outputDir = path.join(process.cwd(), 'docs');
           if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
           }
-          
+
           const pdfPath = path.join(outputDir, 'pdf.pdf');
           console.log(`Generating PDF at: ${pdfPath}`);
-          
+
           await page.pdf({
             path: pdfPath,
             format: 'A4',
-            printBackground: true
+            printBackground: true,
+            margin: {
+              top: '0px',
+              right: '0px',
+              bottom: '0px',
+              left: '0px'
+            }
           });
-          
+
           await browser.close();
           console.log('Browser closed');
         })();
         EOL
-        
+
         mkdir -p docs
         node generate-pdf.js
 
