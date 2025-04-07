@@ -5,25 +5,23 @@ on:
     branches: [ main ]
     paths:
       - 'index.html'
-  workflow_dispatch: # Added this line to enable manual triggering
+  workflow_dispatch: # Enables manual triggering
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Add explicit permissions
     permissions:
       contents: write
 
     steps:
     - uses: actions/checkout@v3
       with:
-        # Full git history to ensure proper diffs
         fetch-depth: 0
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '18' # Updated to Node.js 18
 
     - name: Install dependencies
       run: |
@@ -56,7 +54,7 @@ jobs:
           });
           console.log('Page loaded, waiting for resources...');
 
-          // Increased wait time for external resources (fonts, CSS)
+          // Increased wait time for external resources
           await page.waitForTimeout(5000);
           console.log('Waited 5 seconds for resources to load');
 
