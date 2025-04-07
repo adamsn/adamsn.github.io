@@ -14,122 +14,124 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: Install dependencies
-      run: |
-        npm init -y
-        npm install puppeteer
+      - name: Install dependencies
+        run: |
+          npm init -y
+          npm install puppeteer
 
-    - name: Generate PDF
-      run: |
-        cat > generate-pdf.js << 'EOL'
-        const puppeteer = require('puppeteer');
-        const path = require('path');
-        const fs = require('fs');
-
-        (async () => {
-          console.log('Starting PDF generation process...');
-
-          const browser = await puppeteer.launch({
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
-          });
-          console.log('Browser launched successfully');
-
-          const page = await browser.newPage();
-          console.log('New page created');
-
-          // Use print media type to apply print-specific CSS
-          await page.emulateMediaType('print');
-
-          const htmlPath = path.join(process.cwd(), 'index.html');
-          console.log(`Loading HTML from: ${htmlPath}`);
-
-          await page.goto(`file://${htmlPath}`, {
-            waitUntil: 'networkidle0'
-          });
-          console.log('Page loaded, waiting for resources...');
-
-          // Add custom CSS to fix layout for PDF
-          await page.evaluate(() => {
-            // Hide download button and header
-            const header = document.querySelector('.row.header');
-            if (header) header.style.display = 'none';
-            
-            // Hide link icons
-            const linkIcons = document.querySelectorAll('.fa-up-right-from-square');
-            linkIcons.forEach(icon => icon.style.display = 'none');
-            
-            // Fix layout for printing - ensure everything fits on one page
-            document.body.style.margin = '0';
-            document.body.style.padding = '0';
-            
-            // Adjust the page size to fit content
-            const page = document.querySelector('.page');
-            if (page) {
-              page.style.width = '21cm'; // A4 width
-              page.style.height = '29.7cm'; // A4 height
-              page.style.padding = '10mm';
-              page.style.margin = '0';
-              page.style.boxSizing = 'border-box';
-              page.style.boxShadow = 'none';
+      - name: Generate PDF
+        run: |
+          cat > generate-pdf.js << 'EOL'
+          const puppeteer = require('puppeteer');
+          const path = require('path');
+          const fs = require('fs');
+          
+          (async () => {
+            console.log('Starting PDF generation process...');
+          
+            const browser = await puppeteer.launch({
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+            console.log('Browser launched successfully');
+          
+            const page = await browser.newPage();
+            console.log('New page created');
+          
+            // Use print media type to apply print-specific CSS
+            await page.emulateMediaType('print');
+          
+            const htmlPath = path.join(process.cwd(), 'index.html');
+            console.log(`Loading HTML from: ${htmlPath}`);
+          
+            await page.goto(`file://${htmlPath}`, {
+              waitUntil: 'networkidle0'
+            });
+            console.log('Page loaded, waiting for resources...');
+          
+            // Add custom CSS to fix layout for PDF
+            await page.evaluate(() => {
+              // Hide download button and header
+              const header = document.querySelector('.row.header');
+              if (header) header.style.display = 'none';
+          
+              // Hide link icons
+              const linkIcons = document.querySelectorAll('.fa-up-right-from-square');
+              linkIcons.forEach(icon => icon.style.display = 'none');
+          
+              // Fix layout for printing - ensure everything fits on one page
+              document.body.style.margin = '0';
+              document.body.style.padding = '0';
+          
+              // Adjust the page size to fit content
+              const page = document.querySelector('.page');
+              if (page) {
+                page.style.width = '21cm'; // A4 width
+                page.style.height = '29.7cm'; // A4 height
+                page.style.padding = '10mm';
+                page.style.margin = '0';
+                page.style.boxSizing = 'border-box';
+                page.style.boxShadow = 'none';
+              }
+          
+              // Ensure columns stay side by side
+              const leftColumn = document.querySelector('.left-column');
+              const rightColumn = document.querySelector('.right-column');
+          
+              if (leftColumn && rightColumn) {
+                leftColumn.style.width = '160px';
+                leftColumn.style.float = 'left';
+                leftColumn.style.pageBreakInside = 'avoid';
+          
+                rightColumn.style.marginLeft = '180px';
+                rightColumn.style.width = 'auto';
+                rightColumn.style.pageBreakInside = 'avoid';
+              }
+            });
+          
+            // Ensure the output directory exists
+            const outputDir = path.join(process.cwd(), 'docs');
+            if (!fs.existsSync(outputDir)) {
+              fs.mkdirSync(outputDir, { recursive: true });
             }
-            
-            // Ensure columns stay side by side
-            const leftColumn = document.querySelector('.left-column');
-            const rightColumn = document.querySelector('.right-column');
-            
-            if (leftColumn && rightColumn) {
-              leftColumn.style.width = '160px';
-              leftColumn.style.float = 'left';
-              leftColumn.style.pageBreakInside = 'avoid';
-              
-              rightColumn.style.marginLeft = '180px';
-              rightColumn.style.width = 'auto';
-              rightColumn.style.pageBreakInside = 'avoid';
-            }
-          });
+          
+            const pdfPath = path.join(outputDir, 'pdf.pdf');
+            console.log(`Generating PDF at: ${pdfPath}`);
+          
+            await page.pdf({
+              path: pdfPath,
+              pageRanges: '1-1',
+              format: 'A4',
+              printBackground: true,
+              scale: 0.97,
+              margin: {
+                top: '0mm',
+                right: '0mm',
+                bottom: '0mm',
+                left: '0mm'
+              }
+            });
+          
+            await browser.close();
+            console.log('Browser closed');
+          })();
+          EOL
+          
+          mkdir -p docs
+          node generate-pdf.js
 
-          // Ensure the output directory exists
-          const outputDir = path.join(process.cwd(), 'docs');
-          if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
-          }
-
-          const pdfPath = path.join(outputDir, 'pdf.pdf');
-          console.log(`Generating PDF at: ${pdfPath}`);
-
-          await page.pdf({
-            path: pdfPath,
-            format: 'A4',
-            printBackground: true,
-            margin: {
-              top: '0',
-              right: '0',
-              bottom: '0',
-              left: '0'
-            }
-          });
-
-          await browser.close();
-          console.log('Browser closed');
-        })();
-        EOL
-
-        mkdir -p docs
-        node generate-pdf.js
-
-    - name: Commit and push PDF
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'github-actions@github.com'
-        git add -f docs/pdf.pdf
-        git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
-        git push
+      - name: Commit and push PDF
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
+          git add -f docs/pdf.pdf
+          git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
+          git push
