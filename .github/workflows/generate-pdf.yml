@@ -67,7 +67,7 @@ jobs:
               path: pdfPath,
               printBackground: true,
               format: 'A4',
-              scale: 0.75
+              scale: 0.94
             });
 
             await browser.close();
