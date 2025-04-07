@@ -111,7 +111,7 @@ jobs:
               pageRanges: '1-1',
               format: 'A4',
               printBackground: true,
-              scale: 0.97,
+              scale: 0.94,
               margin: {
                 top: '0mm',
                 right: '0mm',
