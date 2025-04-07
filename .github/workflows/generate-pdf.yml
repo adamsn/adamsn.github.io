@@ -37,85 +37,49 @@ jobs:
 
         (async () => {
           console.log('Starting PDF generation process...');
-
+          
           const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox']
           });
           console.log('Browser launched successfully');
-
+          
           const page = await browser.newPage();
           console.log('New page created');
-
-          // Emulate screen media instead of print to keep all elements visible
-          await page.emulateMediaType('screen');
-          console.log('Emulating screen media type');
-
-          // Set viewport with wider width to ensure left sidebar is captured
-          await page.setViewport({
-            width: 1240,
-            height: 1754,  // A4 height at 96 DPI
-            deviceScaleFactor: 1.5,  // Higher resolution
-          });
-
+          
+          // Use print media type to apply print-specific CSS
+          await page.emulateMediaType('print');
+          
           const htmlPath = path.join(process.cwd(), 'index.html');
           console.log(`Loading HTML from: ${htmlPath}`);
-
+          
           await page.goto(`file://${htmlPath}`, {
             waitUntil: 'networkidle2'
           });
           console.log('Page loaded, waiting for resources...');
-
-          // Increase wait time for resources to fully load
-          await new Promise(resolve => setTimeout(resolve, 10000));
-          console.log('Waited 10 seconds for resources to load');
-
+          
+          // Simple timeout
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          
           // Ensure the output directory exists
           const outputDir = path.join(process.cwd(), 'docs');
           if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
-            console.log('Created output directory');
           }
-
+          
           const pdfPath = path.join(outputDir, 'pdf.pdf');
           console.log(`Generating PDF at: ${pdfPath}`);
-
-          // Calculate optimal width based on the page content
-          const { width } = await page.evaluate(() => {
-            const resume = document.getElementById('resume');
-            return {
-              width: resume.offsetWidth
-            };
-          });
-          console.log(`Detected resume width: ${width}px`);
-
+          
           await page.pdf({
             path: pdfPath,
             format: 'A4',
-            printBackground: true,
-            scale: 0.92,  // Adjust scale to fit the page
-            preferCSSPageSize: false,
-            margin: {
-              top: '10px',
-              right: '10px',
-              bottom: '10px',
-              left: '10px'
-            }
+            printBackground: true
           });
-
-          // Check if PDF was created successfully
-          if (fs.existsSync(pdfPath)) {
-            const stats = fs.statSync(pdfPath);
-            console.log(`PDF created successfully! Size: ${stats.size} bytes`);
-          } else {
-            console.error('PDF file was not created!');
-            process.exit(1);
-          }
-
+          
           await browser.close();
           console.log('Browser closed');
         })();
         EOL
-
+        
         mkdir -p docs
         node generate-pdf.js
 
@@ -123,25 +87,6 @@ jobs:
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'github-actions@github.com'
-
-        # Check if PDF exists and has content
-        if [ -f docs/pdf.pdf ]; then
-          file_size=$(stat -c%s "docs/pdf.pdf")
-          echo "PDF size: $file_size bytes"
-          if [ "$file_size" -eq 0 ]; then
-            echo "Error: PDF file is empty!"
-            exit 1
-          fi
-        else
-          echo "Error: PDF file not found!"
-          exit 1
-        fi
-
-        # Force add the PDF file
         git add -f docs/pdf.pdf
-
-        # Force a commit even if git thinks there are no changes
         git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
-
-        # Push changes to the repository
         git push
