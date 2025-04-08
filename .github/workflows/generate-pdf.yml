@@ -25,6 +25,7 @@ jobs:
           output: docs/pdf.pdf
           format: 'A4'
           print_background: 'true'
+          wait_for: '.profile-pic img'
 
       - name: Commit and push PDF
         run: |
