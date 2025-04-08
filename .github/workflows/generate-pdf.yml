@@ -34,6 +34,7 @@ jobs:
           source: index_with_embedded_img.html  # Use the new file with embedded image
           output: docs/pdf.pdf
           format: 'A4'
+          margin: '0,0,0,0'
           print_background: 'true'
 
       - name: Commit and push PDF
