@@ -369,30 +369,9 @@
 
         @media print {
 
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-
             .page {
-                width: 100% !important; /* Override any other width setting */
-                margin: 0 !important;
-                box-sizing: border-box;
                 page-break-after: avoid;
-            }
-
-            /* Fix for right margin - ensure exact box sizing */
-            *, *:before, *:after {
-                box-sizing: border-box;
-            }
-
-            body {
-                margin: 0;
-            }
-
-            .page {
+                page-break-inside: avoid;
                 width: 100%;
                 height: auto;
                 margin: 0;
