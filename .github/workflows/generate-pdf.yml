@@ -6,6 +6,7 @@ on:
     paths:
       - 'index.html'
       - '.github/workflows/generate-pdf.yml'
+      - 'profile.jpg'  # Added to trigger on image changes
   workflow_dispatch:
 
 jobs:
@@ -19,10 +20,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Add this step before the HTML-to-PDF conversion
+      - name: Embed profile image in HTML
+        run: |
+          echo "Converting profile image to base64..."
+          BASE64_IMAGE=$(base64 -w 0 profile.jpg)
+          cp index.html index_with_embedded_img.html
+          sed -i 's|src="profile.jpg"|src="data:image/jpeg;base64,'$BASE64_IMAGE'"|g' index_with_embedded_img.html
+
       - name: Convert HTML to PDF
         uses: narthanaj/html-to-pdf-action@v1.0.0
         with:
-          source: index.html
+          source: index_with_embedded_img.html  # Use the new file with embedded image
           output: docs/pdf.pdf
           format: 'A4'
           print_background: 'true'
