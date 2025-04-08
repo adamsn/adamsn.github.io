@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'index.html'
+      - '.github/workflows/generate-pdf.yml'
   workflow_dispatch:
 
 jobs:
