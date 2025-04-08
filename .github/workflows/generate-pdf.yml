@@ -18,11 +18,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run Gotenberg
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Vivliostyle
+        run: npm install -g @vivliostyle/cli
+
+      - name: Generate PDF
         run: |
           mkdir -p docs
-          docker run --rm -p 3000:3000 gotenberg/gotenberg:7
-          curl -X POST http://localhost:3000/forms/chromium/convert/html -F "files=@index.html" -o docs/pdf.pdf
+          vivliostyle build index.html -o docs/pdf.pdf
 
       - name: Commit and push PDF
         run: |
