@@ -18,17 +18,47 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Chrome
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Playwright
         run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          npm init -y
+          npm install @playwright/test
+          npx playwright install chromium
+          npm install -D playwright
 
       - name: Generate PDF
         run: |
           mkdir -p docs
-          google-chrome --headless --disable-gpu --print-to-pdf=docs/pdf.pdf file://$(pwd)/index.html
+          cat > generate-pdf.js << 'EOL'
+          const { chromium } = require('playwright');
+          const path = require('path');
+
+          (async () => {
+            const browser = await chromium.launch();
+            const context = await browser.newContext();
+            const page = await context.newPage();
+            
+            const htmlPath = path.join(process.cwd(), 'index.html');
+            await page.goto(`file://${htmlPath}`);
+            
+            // Ensure CSS is fully loaded
+            await page.waitForLoadState('networkidle');
+            
+            await page.pdf({
+              path: path.join(process.cwd(), 'docs/pdf.pdf'),
+              format: 'A4',
+              printBackground: true,
+              margin: { top: 0, right: 0, bottom: 0, left: 0 }
+            });
+            
+            await browser.close();
+          })();
+          EOL
+          node generate-pdf.js
 
       - name: Commit and push PDF
         run: |
