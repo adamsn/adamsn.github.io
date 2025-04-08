@@ -18,16 +18,34 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install WeasyPrint
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
-          pip3 install weasyprint
+          npm init -y
+          npm install puppeteer pagedjs pagedjs-cli
 
       - name: Generate PDF
         run: |
           mkdir -p docs
-          weasyprint index.html docs/pdf.pdf
+          cat > pagedjs-config.js << 'EOL'
+          module.exports = {
+            page: {
+              width: 210,
+              height: 297,
+              margin: {
+                top: 10,
+                right: 10,
+                bottom: 10,
+                left: 10
+              }
+            }
+          };
+          EOL
+          npx pagedjs-cli index.html -o docs/pdf.pdf --config pagedjs-config.js
 
       - name: Commit and push PDF
         run: |
