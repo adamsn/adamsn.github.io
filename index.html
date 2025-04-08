@@ -371,17 +371,21 @@
 
             html, body {
                 height: 100%;
+                margin: 0;
+                padding: 0;
                 overflow: hidden;
             }
 
             .page {
+                width: 100% !important; /* Override any other width setting */
+                margin: 0 !important;
+                box-sizing: border-box;
                 page-break-after: avoid;
-                page-break-inside: avoid;
             }
 
-            html {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
+            /* Fix for right margin - ensure exact box sizing */
+            *, *:before, *:after {
+                box-sizing: border-box;
             }
 
             body {
