@@ -18,21 +18,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: HTML to PDF Converter
+        uses: narthanaj/html-to-pdf-action@v1.0.0
         with:
-          node-version: '18'
-
-      - name: Install Vivliostyle
-        run: npm install -g @vivliostyle/cli
-
-      - name: Generate PDF
-        run: |
-          mkdir -p docs
-          vivliostyle build index.html -o docs/pdf.pdf
+          source: index.html
+          output: docs/pdf.pdf
+          format: 'A4'
+          print_background: 'true'
 
       - name: Commit and push PDF
         run: |
+          mkdir -p docs
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'github-actions@github.com'
           git add -f docs/pdf.pdf
