@@ -18,47 +18,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install Playwright
+      - name: Install WeasyPrint
         run: |
-          npm init -y
-          npm install @playwright/test
-          npx playwright install chromium
-          npm install -D playwright
+          sudo apt-get update
+          sudo apt-get install -y python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
+          pip3 install weasyprint
 
       - name: Generate PDF
         run: |
           mkdir -p docs
-          cat > generate-pdf.js << 'EOL'
-          const { chromium } = require('playwright');
-          const path = require('path');
-
-          (async () => {
-            const browser = await chromium.launch();
-            const context = await browser.newContext();
-            const page = await context.newPage();
-            
-            const htmlPath = path.join(process.cwd(), 'index.html');
-            await page.goto(`file://${htmlPath}`);
-            
-            // Ensure CSS is fully loaded
-            await page.waitForLoadState('networkidle');
-            
-            await page.pdf({
-              path: path.join(process.cwd(), 'docs/pdf.pdf'),
-              format: 'A4',
-              printBackground: true,
-              scale: 0.95,
-            });
-            
-            await browser.close();
-          })();
-          EOL
-          node generate-pdf.js
+          weasyprint index.html docs/pdf.pdf
 
       - name: Commit and push PDF
         run: |
