@@ -18,64 +18,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
+      - name: Install Chrome
         run: |
-          npm init -y
-          npm install puppeteer
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
       - name: Generate PDF
         run: |
-          cat > generate-pdf.js << 'EOL'
-          const puppeteer = require('puppeteer');
-          const path = require('path');
-          const fs = require('fs');
-
-          (async () => {
-            console.log('Starting PDF generation process...');
-
-            const browser = await puppeteer.launch({
-              args: ['--no-sandbox', '--disable-setuid-sandbox']
-            });
-            
-            const page = await browser.newPage();
-            
-            // Use print media type to apply print-specific CSS
-            await page.emulateMediaType('print');
-          
-            let height = await page.evaluate(() => document.documentElement.offsetHeight);
-
-            const htmlPath = path.join(process.cwd(), 'index.html');
-            
-            await page.goto(`file://${htmlPath}`, {
-              waitUntil: 'networkidle0'
-            });
-
-            // Ensure the output directory exists
-            const outputDir = path.join(process.cwd(), 'docs');
-            if (!fs.existsSync(outputDir)) {
-              fs.mkdirSync(outputDir, { recursive: true });
-            }
-
-            const pdfPath = path.join(outputDir, 'pdf.pdf');
-            
-            await page.pdf({
-              path: pdfPath,
-              preferCSSPageSize: true,
-              printBackground: true
-            });
-
-            await browser.close();
-            console.log('PDF generated successfully');
-          })();
-          EOL
-
           mkdir -p docs
-          node generate-pdf.js
+          google-chrome --headless --disable-gpu --print-to-pdf=docs/pdf.pdf file://$(pwd)/index.html
 
       - name: Commit and push PDF
         run: |
