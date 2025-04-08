@@ -369,17 +369,15 @@
 
         @media print {
 
-            * {
-                box-sizing: border-box;
-            }
-
             body {
                 margin: 0;
             }
 
             .page {
-                width: 100%;
-                height: auto;
+                width: 21cm;
+                height: calc(29.7cm - 1px); /* Adjust for A4 height */
+                overflow: hidden;
+                page-break-after: avoid;
                 margin: 0;
                 padding: 36px 0 30px;
                 box-shadow: none;
