@@ -18,34 +18,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: |
-          npm init -y
-          npm install puppeteer pagedjs pagedjs-cli
-
-      - name: Generate PDF
+      - name: Run Gotenberg
         run: |
           mkdir -p docs
-          cat > pagedjs-config.js << 'EOL'
-          module.exports = {
-            page: {
-              width: 210,
-              height: 297,
-              margin: {
-                top: 10,
-                right: 10,
-                bottom: 10,
-                left: 10
-              }
-            }
-          };
-          EOL
-          npx pagedjs-cli index.html -o docs/pdf.pdf --config pagedjs-config.js
+          docker run --rm -p 3000:3000 gotenberg/gotenberg:7
+          curl -X POST http://localhost:3000/forms/chromium/convert/html -F "files=@index.html" -o docs/pdf.pdf
 
       - name: Commit and push PDF
         run: |
