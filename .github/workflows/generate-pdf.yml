@@ -35,6 +35,7 @@ jobs:
           output: docs/pdf.pdf
           format: 'A4'
           print_background: 'true'
+          scale: '.96'
 
       - name: Commit and push PDF
         run: |

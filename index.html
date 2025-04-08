@@ -238,6 +238,7 @@
         }
 
         @page {
+            size: A4 portrait;
             margin: 0;
         }
 
@@ -367,14 +368,13 @@
         }
 
         @media print {
-
             body {
                 margin: 0;
             }
 
             .page {
-                width: 21cm;
-                height: calc(29.7cm - 1px); /* Adjust for A4 height */
+                width: 100%;
+                height: auto;
                 margin: 0;
                 padding: 36px 0 30px;
                 box-shadow: none;
