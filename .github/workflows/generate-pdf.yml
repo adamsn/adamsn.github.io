@@ -32,7 +32,7 @@ jobs:
         uses: narthanaj/html-to-pdf-action@v1.0.0
         with:
           source: index_with_embedded_img.html  # Use the new file with embedded image
-          output: docs/pdf.pdf
+          output: docs/fr.pdf
           format: 'A4'
           margin: '0,0,0,0'
           scale: 1.42
@@ -43,6 +43,6 @@ jobs:
           mkdir -p docs
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'github-actions@github.com'
-          git add -f docs/pdf.pdf
+          git add -f docs/fr.pdf
           git commit -m "Update generated PDF resume [$(date)]" || echo "No changes to commit"
           git push
